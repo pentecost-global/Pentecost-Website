@@ -7,27 +7,37 @@ const FAQS = [
   {
     question: "What is Pentecost — is it a church or a denomination?",
     answer:
-      "Pentecost is a non-denominational Christian movement gathering young ministers and believers across churches and ministries in worship, prayer, and the ministry of the Word. It is not intended to build a single church, but to connect people to Christ and to local Christian communities.",
+      "Pentecost is a non-denominational Christian movement gathering young believers, students, and leaders across churches and ministries in worship, prayer, and the ministry of the Word. It is not intended to build a single church or denomination, but to connect people to Christ and to local Christian communities.",
   },
   {
     question: "When and how was the vision birthed?",
     answer:
-      "The vision was birthed during midnight prayer on 20 June 2025. Its aim is spiritual renewal, unity across ministries, and a fresh outpouring of the Holy Spirit.",
+      "The vision was birthed during midnight prayer on 20 June 2025 by Daniel Friday Olanrewaju. Its aim is spiritual renewal, unity across ministries, and a fresh outpouring of the Holy Spirit on a generation.",
+  },
+  {
+    question: "Who is behind Pentecost and who provides oversight?",
+    answer:
+      "Pentecost is stewarded by convener Daniel Friday Olanrewaju alongside a leadership team of prayer, creative, and operations stewards. We operate under the pastoral covering, prayer advisory, and counsel of seasoned local church pastors across our host cities.",
+  },
+  {
+    question: "What is the Young Believers Forum?",
+    answer:
+      "The Young Believers Forum is Pentecost's year-round fellowship and discipleship network. Beyond the citywide gatherings, it provides small-group accountability, biblical study, prayer partners, and mutual encouragement so faith is not walked in isolation.",
   },
   {
     question: "Is there an age restriction to attend gatherings?",
     answer:
-      "No. Although the vision speaks to a generation of young people, attendance is not age-restricted. All who share a hunger for God are welcome.",
+      "No. Although the vision speaks particularly to a generation of young people and students, attendance is not age-restricted. Believers of every age and background who share a hunger for God are warmly welcome.",
   },
   {
     question: "How are gathering cities and programmes decided?",
     answer:
-      "Pentecost goes where prayer and discernment lead. Each gathering carries a shared heart for renewal — including worship, the Word, corporate prayer, and fellowship — while its location and emphasis respond to the leading of the Holy Spirit.",
+      "Pentecost goes where prayer and discernment lead. Each gathering carries a shared heart for renewal — including unhurried worship, the ministry of the Word, corporate prayer, and fellowship — while its location responds to the leading of the Holy Spirit.",
   },
   {
     question: "How can our church, ministry, or student fellowship partner?",
     answer:
-      "Churches, para-church ministries, student fellowships, and university Christian unions can partner in prayer, worship, publicity & mobilisation, new-believer follow-up, and leadership development. Visit the Partner With Us page to explore ways to walk together.",
+      "Churches, campus Christian Unions, and fellowships can partner through our 5 practical pillars: Pray (intercessory shield), Mobilise (rallying student delegations), Serve (volunteer teams), Host (providing venue and facilities), and Follow Up (rooting newly saved into local churches). Visit the Partner With Us page to get started.",
   },
 ] as const;
 

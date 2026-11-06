@@ -11,7 +11,7 @@ import { EnquiryForm } from "@/components/enquiry-form";
 export const metadata: Metadata = {
   title: "Contact & Enquiries",
   description:
-    "Enquiries about Pentecost, partnership, volunteering and the Young Ministers' Forum. Our enquiry service is opening soon.",
+    "Enquiries about Pentecost, partnership, volunteering and the Young Believers Forum. Our enquiry service is opening soon.",
 };
 
 export default function ContactPage() {
@@ -35,7 +35,7 @@ export default function ContactPage() {
               <em>A connection.</em>
             </h2>
             <p className="body-copy mt-6">
-              For churches, ministries, young ministers and anyone seeking to be
+              For churches, ministries, young believers, leaders and anyone seeking to be
               part of the movement, enquiry information will be available here
               soon.
             </p>

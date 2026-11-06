@@ -109,7 +109,7 @@ export function CommunityCollageSection({
               <div className="aspect-[2/3.5] overflow-hidden rounded-md border border-border bg-secondary">
                 <img
                   src="/assets/pentecost-portrait-8.jpg"
-                  alt="Young ministers and believers"
+                  alt="Young believers and leaders"
                   loading="lazy"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />

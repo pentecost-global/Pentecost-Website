@@ -66,16 +66,30 @@ export function EnquiryForm({ partnership = false }: EnquiryFormProps) {
         </label>
 
         <label className="form-field">
-          {partnership ? "Partnership interest" : "Enquiry interest"}
+          {partnership ? "Partnership avenue" : "Enquiry interest"}
           <select name="interest" defaultValue="">
             <option value="" disabled>
-              Select an interest
+              {partnership ? "Select how you'd like to partner" : "Select an interest"}
             </option>
-            <option>Church or ministry partnership</option>
-            <option>Volunteering</option>
-            <option>Prayer</option>
-            <option>Young Ministers&apos; Forum</option>
-            <option>General enquiry</option>
+            {partnership ? (
+              <>
+                <option value="pray">01 / Pray (Intercessory Shield & Prayer Chain)</option>
+                <option value="mobilise">02 / Mobilise (Youth Group / Campus Delegation)</option>
+                <option value="serve">03 / Serve (Worship, Tech, Media, Hospitality)</option>
+                <option value="host">04 / Host (Provide Venue, Hall or Hub)</option>
+                <option value="follow-up">05 / Follow Up (Discipleship & Church Connection)</option>
+                <option value="general-partner">General church or ministry partnership</option>
+              </>
+            ) : (
+              <>
+                <option>Gatherings & attendance</option>
+                <option>Volunteering & serving</option>
+                <option>Intercessory prayer</option>
+                <option>Young Believers Forum</option>
+                <option>Leadership & credibility questions</option>
+                <option>General enquiry</option>
+              </>
+            )}
           </select>
         </label>
 

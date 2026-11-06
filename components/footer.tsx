@@ -132,7 +132,7 @@ export function Footer() {
                     weight="duotone"
                     className="text-primary transition-transform duration-200 group-hover:scale-110"
                   />
-                  <span>Ministers&apos; Forum</span>
+                  <span>Believers Forum</span>
                 </Link>
               </div>
             </div>

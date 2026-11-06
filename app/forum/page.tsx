@@ -12,9 +12,9 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { CtaBand } from "@/components/cta-band";
 
 export const metadata: Metadata = {
-  title: "Young Ministers' Forum",
+  title: "Young Believers Forum",
   description:
-    "An emerging year-round network for young ministers, centred on biblical discipleship, prayer, community, accountability and collaboration.",
+    "An emerging year-round network for young believers, centred on biblical discipleship, prayer, community, accountability and collaboration.",
 };
 
 export default function ForumPage() {
@@ -23,9 +23,9 @@ export default function ForumPage() {
       <PageHero
         variant="forum"
         eyebrow="Beyond the gathering"
-        title="Young Ministers' Forum"
+        title="Young Believers Forum"
       >
-        Growing in Christ. Walking together. Serving faithfully. Ministry is not
+        Growing in Christ. Walking together. Serving faithfully. Faith is not
         a journey to walk alone.
       </PageHero>
 
@@ -43,14 +43,15 @@ export default function ForumPage() {
           <ScrollReveal direction="up" distance={24} delay={120}>
             <div className="body-copy">
               <p>
-                The Young Ministers&apos; Forum is an emerging year-round
-                ministerial network, creating space for community, biblical
-                discipleship, prayer, accountability and collaboration.
+                The Young Believers Forum is an emerging year-round
+                fellowship and discipleship network, creating space for genuine
+                community, biblical formation, corporate prayer, accountability,
+                and kingdom collaboration.
               </p>
               <p>
-                Its heart is to encourage young ministers in their walk with
-                Christ and in faithful service, while strengthening
-                relationships across churches and ministries.
+                Its heart is to encourage young believers in their walk with
+                Christ and in faithful daily service, while strengthening
+                relationships across churches, campuses, and ministries.
               </p>
               <p>
                 The Forum is developing. Interest enquiries will be available

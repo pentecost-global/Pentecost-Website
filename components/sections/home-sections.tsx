@@ -51,6 +51,34 @@ export function HomeHeroSection() {
                 the Word — for a fresh outpouring of the Holy Spirit.
               </p>
 
+              {/* 3-Second Instant Clarity Snapshot: What / Who / What Happens */}
+              <div className="my-5 grid grid-cols-1 sm:grid-cols-3 gap-2.5 max-w-2xl">
+                <div className="hero-glass-card px-3.5 py-2.5 flex flex-col justify-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-ember">
+                    What is it?
+                  </span>
+                  <span className="text-xs font-semibold text-on-dark leading-tight mt-0.5">
+                    Non-denominational revival movement
+                  </span>
+                </div>
+                <div className="hero-glass-card px-3.5 py-2.5 flex flex-col justify-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-ember">
+                    Who is it for?
+                  </span>
+                  <span className="text-xs font-semibold text-on-dark leading-tight mt-0.5">
+                    Young believers, students &amp; all ages
+                  </span>
+                </div>
+                <div className="hero-glass-card px-3.5 py-2.5 flex flex-col justify-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-ember">
+                    What happens?
+                  </span>
+                  <span className="text-xs font-semibold text-on-dark leading-tight mt-0.5">
+                    Prayer, worship, the Word &amp; unity
+                  </span>
+                </div>
+              </div>
+
               <div className="cta-row">
                 <ButtonLink
                   variant="hero"
@@ -333,58 +361,100 @@ export function GatherWithUsSection() {
 }
 
 export function GetInvolvedPreviewSection() {
+  const practicalWays = [
+    {
+      num: "01",
+      title: "Pray",
+      tagline: "Intercession",
+      copy: "Join 24-hour pre-gathering prayer chains, midnight watches, and city intercession.",
+      href: "/partners",
+    },
+    {
+      num: "02",
+      title: "Mobilise",
+      tagline: "Delegations",
+      copy: "Bring your university Christian Union, campus fellowship, or church youth group.",
+      href: "/partners",
+    },
+    {
+      num: "03",
+      title: "Serve",
+      tagline: "Volunteer Teams",
+      copy: "Worship team, audio engineering, cameras, live streaming, hospitality, and ushering.",
+      href: "/get-involved",
+    },
+    {
+      num: "04",
+      title: "Host",
+      tagline: "Venues & Hubs",
+      copy: "Partner church auditoriums and facilities opening doors for citywide gatherings.",
+      href: "/partners",
+    },
+    {
+      num: "05",
+      title: "Follow Up",
+      tagline: "Discipleship",
+      copy: "Connecting newly saved young believers into solid local church communities.",
+      href: "/partners",
+    },
+  ];
+
   return (
     <section className="section soft-section">
       <div className="site-width">
-        <ScrollReveal direction="up" distance={24}>
-          <p className="eyebrow section-label">There’s a place for you</p>
-          <h2 className="tracking-[-0.04em]">
-            Bring your heart.
-            <br />
-            Play your part.
-          </h2>
-        </ScrollReveal>
-
-        <div className="values-grid">
-          <ScrollReveal direction="up" distance={24} delay={0}>
-            <ValueCard
-              index="01"
-              icon={<HandHeartIcon size={24} weight="duotone" />}
-              title="Serve the movement"
-              copy="Bring your gifts to prayer, worship, hospitality, technical and creative teams."
-              href="/get-involved"
-              linkLabel="Explore ways to serve"
-            />
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
+          <ScrollReveal direction="up" distance={24}>
+            <p className="eyebrow section-label">Five Ways to Act</p>
+            <h2 className="tracking-[-0.04em]">
+              Pray. Mobilise. Serve.
+              <br />
+              <em>Host. Follow Up.</em>
+            </h2>
           </ScrollReveal>
+          <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
+            Partnership is practical and hands-on. Whether you are an individual believer,
+            a student group, or a local church pastor, there is a clear place for you.
+          </p>
+        </div>
 
-          <ScrollReveal direction="up" distance={24} delay={100}>
-            <ValueCard
-              index="02"
-              icon={<UsersIcon size={24} weight="duotone" />}
-              title="Stand together"
-              copy="Connect your church, ministry or student community to a shared vision."
-              href="/partners"
-              linkLabel="Explore partnership"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal direction="up" distance={24} delay={200}>
-            <ValueCard
-              index="03"
-              icon={<FlameIcon size={24} weight="duotone" />}
-              title="Carry the fire"
-              copy="Join in prayer for spiritual renewal, unity and lives strengthened in Christ."
-              href="/get-involved"
-              linkLabel="Be part of the movement"
-            />
-          </ScrollReveal>
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {practicalWays.map((way, idx) => (
+            <ScrollReveal
+              key={way.num}
+              direction="up"
+              distance={20}
+              delay={idx * 60}
+            >
+              <div className="group h-full rounded-sm border border-border bg-background p-5 flex flex-col justify-between transition-all duration-300 hover:border-primary hover:-translate-y-1 hover:shadow-sm">
+                <div>
+                  <div className="flex items-center justify-between text-xs font-bold text-primary">
+                    <span className="size-6 rounded-sm bg-primary/10 flex items-center justify-center">
+                      {way.num}
+                    </span>
+                    <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                      {way.tagline}
+                    </span>
+                  </div>
+                  <h3 className="mt-3 font-display text-xl font-bold tracking-tight text-foreground">
+                    {way.title}
+                  </h3>
+                  <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">
+                    {way.copy}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-border">
+                  <TextLink href={way.href}>Step in →</TextLink>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-export function YoungMinistersForumSection() {
+export function YoungBelieversForumSection() {
   const forumPillars = [
     { label: "Biblical Discipleship", Icon: BookOpenTextIcon },
     { label: "Genuine Community", Icon: UsersThreeIcon },
@@ -399,7 +469,7 @@ export function YoungMinistersForumSection() {
             <ScrollReveal direction="up" distance={24}>
               <p className="eyebrow section-label">Beyond the gathering</p>
               <h2 className="tracking-[-0.04em]">
-                Young Ministers’
+                Young Believers’
                 <br />
                 Forum.
               </h2>
@@ -420,9 +490,10 @@ export function YoungMinistersForumSection() {
             <ScrollReveal direction="up" distance={24} delay={120}>
               <div className="body-copy">
                 <p>
-                  Ministry is not a journey to walk alone. An emerging
-                  year-round network for community, biblical discipleship,
-                  prayer, accountability and collaboration.
+                  Faith is not a journey to walk alone. An emerging
+                  year-round fellowship and discipleship network for young
+                  believers, centered on community, biblical formation, corporate
+                  prayer, accountability, and walking together in truth.
                 </p>
                 <p className="text-on-dark font-semibold">
                   Growing in Christ. Walking together. Serving faithfully.
@@ -446,3 +517,6 @@ export function YoungMinistersForumSection() {
     </section>
   );
 }
+
+// Backward-compatibility alias
+export const YoungMinistersForumSection = YoungBelieversForumSection;

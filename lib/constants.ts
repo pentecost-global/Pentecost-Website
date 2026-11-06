@@ -14,14 +14,14 @@ export const NAV_ITEMS = [
   { label: "About", href: "/about" },
   { label: "Gatherings", href: "/gatherings" },
   { label: "Partners", href: "/partners" },
-  { label: "Young Ministers' Forum", href: "/forum" },
+  { label: "Young Believers Forum", href: "/forum" },
   { label: "Media", href: "/media" },
 ] as const;
 
 export const FOOTER_MOVEMENT_LINKS = [
   { label: "Our mandate", href: "/about" },
   { label: "Gatherings", href: "/gatherings" },
-  { label: "Young Ministers' Forum", href: "/forum" },
+  { label: "Young Believers Forum", href: "/forum" },
   { label: "Media & testimonies", href: "/media" },
 ] as const;
 

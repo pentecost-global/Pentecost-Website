@@ -58,7 +58,7 @@ export function Header() {
   const serviceSubLinks = [
     { label: "Serve the Movement", href: "/get-involved" },
     { label: "Partner Churches & Ministries", href: "/partners" },
-    { label: "Young Ministers' Forum", href: "/forum" },
+    { label: "Young Believers Forum", href: "/forum" },
   ];
 
   const primaryDrawerLinks = [

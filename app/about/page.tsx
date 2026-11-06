@@ -15,13 +15,14 @@ import {
 } from "@/components/ui/scroll-reveal";
 import { FaqAccordion } from "@/components/sections/faq-accordion";
 import { SurroundingFrameGrid } from "@/components/sections/surrounding-frame-grid";
+import { LeadershipSection } from "@/components/sections/leadership-section";
 import { CtaBand } from "@/components/cta-band";
 import { VISION_STATEMENT } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "The Mandate",
+  title: "The Mandate & Leadership",
   description:
-    "Discover the vision and purpose of Pentecost: spiritual renewal, unity across ministries and a generation strengthened in Christ.",
+    "Discover the vision, leadership and stewards of Pentecost: spiritual renewal, unity across ministries and a generation strengthened in Christ.",
 };
 
 export default function AboutPage() {
@@ -32,7 +33,7 @@ export default function AboutPage() {
         eyebrow="Our heart. His purposes."
         title="The Mandate"
       >
-        A gathering of young ministers and believers. A movement across churches
+        A gathering of young believers, leaders and students. A movement across churches
         and ministries. One shared hunger for God.
       </PageHero>
 
@@ -64,9 +65,9 @@ export default function AboutPage() {
           <ScrollReveal direction="up" distance={24} delay={120}>
             <div className="body-copy">
               <p>
-                Pentecost is a non-denominational gathering of young ministers
-                and believers, bringing people across churches and ministries
-                together in worship, prayer, and the ministry of the Word.
+                Pentecost is a non-denominational gathering of young believers,
+                bringing people across churches and ministries together in
+                worship, prayer, and the ministry of the Word.
               </p>
               <p>
                 The vision was birthed during midnight prayer on 20 June 2025.
@@ -167,6 +168,9 @@ export default function AboutPage() {
         ctaLabel="Stand with the movement"
         ctaHref="/get-involved"
       />
+
+      {/* Leadership & Stewards Section */}
+      <LeadershipSection />
 
       <section className="px-4 sm:px-6 lg:px-10 py-4">
         <div className="mx-auto max-w-[1720px]">

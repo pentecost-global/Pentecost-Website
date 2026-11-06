@@ -319,7 +319,7 @@ export function PageHero({
     );
   }
 
-  // 5. YOUNG MINISTERS' FORUM: Dark Ministerial Roundtable Hero with Formation Ledger
+  // 5. YOUNG BELIEVERS FORUM: Dark Fellowship Roundtable Hero with Formation Ledger
   if (variant === "forum") {
     return (
       <section className="bg-[linear-gradient(135deg,var(--night)_0%,oklch(23%_0.03_40)_65%,oklch(27%_0.055_38)_100%)] text-on-dark border-b border-on-dark/15 py-16 sm:py-24">

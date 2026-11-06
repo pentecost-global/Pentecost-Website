@@ -42,7 +42,7 @@ const VIDEO_MOMENTS = [
     poster: "/assets/pentecost-video-2-poster.jpg",
     tag: "04 / FELLOWSHIP & COMMUNITY",
     title: "Welcome & Hospitality",
-    caption: "Creating a warm space where young ministers and believers connect.",
+    caption: "Creating a warm space where young believers and students connect.",
   },
 ] as const;
 
@@ -199,8 +199,8 @@ export function MediaShowcaseSection() {
               </h2>
             </div>
             <p className="body-copy max-w-md">
-              Glimpses from our gatherings across cities — young ministers and
-              believers standing together with one hunger for God. Tap any reel
+              Glimpses from our gatherings across cities — young believers and
+              leaders standing together with one hunger for God. Tap any reel
               to play with sound.
             </p>
           </div>
