@@ -369,12 +369,12 @@ export function Header() {
             YouTube
           </a>
           <a
-            href="https://x.com/pentecostymc"
+            href="https://tiktok.com/@pentecostglobal"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-on-dark transition-colors"
           >
-            Twitter / X
+            TikTok
           </a>
         </div>
       </div>

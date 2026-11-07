@@ -132,6 +132,8 @@ export function PageHero({
                   <img
                     src="/assets/pentecost-portrait-8.jpg"
                     alt="Worship and prayer gathering"
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover opacity-95"
                   />
                 </div>
@@ -163,6 +165,8 @@ export function PageHero({
             alt=""
             width={1920}
             height={1088}
+            loading="eager"
+            decoding="async"
           />
           <div className="site-width py-20 sm:py-28 text-center">
             <ScrollReveal
@@ -227,6 +231,7 @@ export function PageHero({
   }
 
   // 4. PARTNERS PAGE: Architectural Asymmetric Grid Hero with Community Mosaic
+  // 4. PARTNERS PAGE: Dark Atmospheric Split Hero with Real Minister Photo & Linear Gradient
   if (variant === "partners") {
     const communities = [
       {
@@ -252,35 +257,55 @@ export function PageHero({
     ];
 
     return (
-      <section className="bg-[linear-gradient(180deg,var(--background)_0%,var(--secondary)_100%)] border-b border-border py-14 sm:py-20">
-        <div className="site-width">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,var(--night)_0%,oklch(17%_0.025_35)_55%,oklch(22%_0.045_38)_100%)] text-on-dark border-b border-on-dark/15 py-14 sm:py-20 lg:py-24">
+        {/* Real photo of minister preaching positioned on the right with linear gradient blending */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
+          <img
+            src="/assets/pentecost-glasgow-minister.jpg"
+            alt=""
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+            className="absolute right-0 top-0 h-full w-full lg:w-[58%] object-cover object-[78%_25%] opacity-35 lg:opacity-60 mix-blend-luminosity filter contrast-110 brightness-90"
+          />
+          {/* Multi-stage linear gradient fade matching hero style */}
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,var(--night)_0%,var(--night)_32%,oklch(14%_0.02_35_/_0.88)_58%,oklch(14%_0.02_35_/_0.32)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,oklch(14%_0.02_35_/_0.4)_75%,var(--night)_100%)]" />
+          {/* Subtle amber atmospheric backlight */}
+          <div className="absolute top-1/4 right-1/4 w-80 h-80 rounded-full bg-primary/20 blur-3xl pointer-events-none" />
+        </div>
+
+        <div className="site-width relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Content Column */}
             <ScrollReveal
               direction="up"
               distance={22}
-              className="lg:col-span-6"
+              className="lg:col-span-7"
             >
-              <p className="eyebrow section-label">
+              <p className="eyebrow text-ember flex items-center gap-2">
                 <span>{eyebrow}</span>
               </p>
-              <h1 className="mt-4 font-display text-5xl sm:text-7xl font-extrabold uppercase tracking-[-0.045em] leading-[0.95] text-foreground">
-                {title}
+              <h1 className="mt-4 font-display text-5xl sm:text-7xl lg:text-[76px] font-extrabold uppercase tracking-[-0.045em] leading-[0.95] text-on-dark">
+                PARTNER <span className="text-ember">WITH US</span>
               </h1>
-              <p className="mt-6 text-base leading-relaxed text-muted-foreground max-w-lg">
+              <p className="mt-6 text-base sm:text-lg leading-relaxed text-dark-muted max-w-xl">
                 {children}
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3 w-full sm:w-auto">
+
+              {/* Action Buttons: Exact Matching Heights with hero + heroOutline styles */}
+              <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-center gap-3 w-full sm:w-auto">
                 <ButtonLink
-                  variant="movement"
+                  variant="hero"
                   size="lg"
-                  href="#enquiry-status"
+                  href="#partner-enquiry-section"
                   className="w-full sm:w-auto"
                 >
                   Partnership Enquiries{" "}
                   <ArrowDownIcon size={16} weight="bold" />
                 </ButtonLink>
                 <ButtonLink
-                  variant="outline"
+                  variant="heroOutline"
                   size="lg"
                   href="/about"
                   className="w-full sm:w-auto"
@@ -290,29 +315,80 @@ export function PageHero({
               </div>
             </ScrollReveal>
 
+            {/* Right Side Glass Card: 5 Practical Pillars & Movement Commitment */}
             <ScrollReveal
               direction="up"
               distance={24}
               delay={120}
-              className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4"
+              className="lg:col-span-5"
             >
-              {communities.map(({ Icon, title: cTitle, desc }) => (
-                <div
-                  key={cTitle}
-                  className="rounded-sm border border-border bg-secondary p-6 transition-colors duration-200 hover:border-primary/50"
-                >
-                  <span className="inline-flex size-10 items-center justify-center rounded-sm bg-accent text-primary">
-                    <Icon size={20} weight="duotone" />
+              <div className="hero-glass-card p-6 sm:p-7 text-on-dark backdrop-blur-md bg-night/65 border border-on-dark/20 rounded-md shadow-2xl">
+                <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-widest text-ember pb-3 border-b border-on-dark/15">
+                  <span className="flex items-center gap-1.5">
+                    <FlameIcon size={14} weight="fill" />
+                    Pillars of Unity
                   </span>
-                  <h2 className="mt-4 font-display text-xl font-bold tracking-[-0.02em] text-foreground">
-                    {cTitle}
-                  </h2>
-                  <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-                    {desc}
-                  </p>
+                  <span>5 Practical Ways</span>
                 </div>
-              ))}
+                <p className="mt-4 font-display text-lg sm:text-xl font-bold leading-snug tracking-[-0.02em] text-on-dark">
+                  &ldquo;Building no kingdom but Christ&apos;s — across churches, campuses and cities.&rdquo;
+                </p>
+                <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-dark-muted">
+                  Pentecost is not a new church denomination. We serve pastors, fellowships and Christian unions by mobilizing young believers, grounding them in prayer, and connecting them back into local church discipleship.
+                </p>
+
+                {/* 5 Pillars Quick Pill Strip */}
+                <div className="mt-5 grid grid-cols-5 gap-1.5 text-center pt-4 border-t border-on-dark/15">
+                  {[
+                    { name: "Pray", label: "Shield" },
+                    { name: "Mobilise", label: "Rally" },
+                    { name: "Serve", label: "Teams" },
+                    { name: "Host", label: "Venues" },
+                    { name: "Follow Up", label: "Discipleship" },
+                  ].map((p) => (
+                    <div key={p.name} className="p-1.5 sm:p-2 rounded bg-white/5 border border-white/10">
+                      <span className="block text-[11px] font-bold text-ember uppercase">{p.name}</span>
+                      <span className="block text-[9px] text-dark-muted mt-0.5">{p.label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-5 pt-3.5 flex items-center justify-between text-xs border-t border-on-dark/15">
+                  <span className="text-dark-muted">Non-denominational movement</span>
+                  <a
+                    href="#practical-partnership"
+                    className="group inline-flex items-center gap-1.5 font-semibold text-ember hover:underline"
+                  >
+                    <span>Explore 5 Pillars</span>
+                    <ArrowDownIcon
+                      size={12}
+                      weight="bold"
+                      className="transition-transform duration-200 group-hover:translate-y-0.5"
+                    />
+                  </a>
+                </div>
+              </div>
             </ScrollReveal>
+          </div>
+
+          {/* 4 Community Partner Bodies Strip */}
+          <div className="mt-12 pt-8 border-t border-on-dark/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {communities.map(({ Icon, title: cTitle, desc }) => (
+              <div
+                key={cTitle}
+                className="rounded-sm border border-on-dark/15 bg-white/[0.04] backdrop-blur-sm p-5 transition-colors duration-200 hover:border-ember/40 hover:bg-white/[0.07]"
+              >
+                <span className="inline-flex size-9 items-center justify-center rounded-sm bg-ember/15 text-ember">
+                  <Icon size={19} weight="duotone" />
+                </span>
+                <h3 className="mt-3 font-display text-base font-bold tracking-tight text-on-dark">
+                  {cTitle}
+                </h3>
+                <p className="mt-1 text-xs leading-relaxed text-dark-muted">
+                  {desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

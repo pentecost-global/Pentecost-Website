@@ -6,6 +6,7 @@ import { LeadershipSection } from "@/components/sections/leadership-section";
 import { PentecostClaritySection } from "@/components/sections/pentecost-clarity";
 import { RealMovementVideosSection } from "@/components/sections/real-movement-videos";
 import { RealTestimoniesSection } from "@/components/sections/real-testimonies";
+import { CallForVolunteersSection } from "@/components/sections/volunteer-callout";
 import {
   CityToCitySection,
   GatherWithUsSection,
@@ -56,7 +57,10 @@ export default function HomePage() {
       {/* 12. Five Practical Ways to Act: Pray, Mobilise, Serve, Host, Follow Up */}
       <GetInvolvedPreviewSection />
 
-      {/* 13. Leadership & Stewards: Who is behind Pentecost & Credibility */}
+      {/* 13. Official Call for Volunteers (10 Teams) & Global Workforce */}
+      <CallForVolunteersSection showFlyers={false} />
+
+      {/* 14. Leadership & Stewards: Who is behind Pentecost & Credibility */}
       <LeadershipSection isHomeTeaser />
 
       {/* 14. Young Believers Forum Spotlight */}

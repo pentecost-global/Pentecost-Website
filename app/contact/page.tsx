@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import {
   GlobeSimpleIcon,
   InstagramLogoIcon,
+  TiktokLogoIcon,
+  YoutubeLogoIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { PageHero } from "@/components/page-hero";
 import { TextLink } from "@/components/ui/text-link";
@@ -40,19 +42,51 @@ export default function ContactPage() {
               soon.
             </p>
 
-            <div className="value-card mt-8 flex items-start justify-between gap-4">
-              <div>
-                <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary mb-2">
+            <div className="value-card mt-8 p-6 flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary">
                   <GlobeSimpleIcon size={14} weight="duotone" />
-                  <span>Social Community</span>
+                  <span>Connect on Social</span>
                 </div>
-                <h3>Find the movement</h3>
-                <p>Public social handle</p>
-                <p className="text-primary mt-2 font-semibold">@pentecostymc</p>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="https://tiktok.com/@pentecostglobal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="size-8 rounded-sm bg-accent text-primary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                    aria-label="TikTok"
+                  >
+                    <TiktokLogoIcon size={16} weight="bold" />
+                  </a>
+                  <a
+                    href="https://instagram.com/pentecostymc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="size-8 rounded-sm bg-accent text-primary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <InstagramLogoIcon size={16} weight="duotone" />
+                  </a>
+                  <a
+                    href="https://youtube.com/@pentecostymc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="size-8 rounded-sm bg-accent text-primary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                    aria-label="YouTube"
+                  >
+                    <YoutubeLogoIcon size={16} weight="fill" />
+                  </a>
+                </div>
               </div>
-              <span className="inline-flex size-11 items-center justify-center rounded-sm bg-accent text-primary">
-                <InstagramLogoIcon size={22} weight="duotone" />
-              </span>
+              <div>
+                <p className="text-xs text-muted-foreground">Follow the movement live on TikTok &amp; Instagram:</p>
+                <p className="text-foreground font-bold mt-1 text-sm">
+                  TikTok: <a href="https://tiktok.com/@pentecostglobal" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@pentecostglobal</a>
+                </p>
+                <p className="text-foreground font-bold text-sm">
+                  Instagram: <a href="https://instagram.com/pentecostymc" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@pentecostymc</a>
+                </p>
+              </div>
             </div>
 
             <TextLink href="/partners">

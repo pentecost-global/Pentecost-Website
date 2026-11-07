@@ -32,7 +32,7 @@ export function SurroundingFrameGrid({
               <img
                 src="/assets/pentecost-landscape-10.jpg"
                 alt=""
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full w-full object-cover object-top"
               />
             </div>
@@ -40,7 +40,7 @@ export function SurroundingFrameGrid({
               <img
                 src="/assets/pentecost-landscape-11.jpg"
                 alt=""
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full w-full object-cover object-center"
               />
             </div>
@@ -65,7 +65,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/gallery-1.jpg"
                   alt="Believers gathered in fellowship"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -77,7 +77,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/pentecost-landscape-9.jpg"
                   alt="Pentecost community united in Christ"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -89,7 +89,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/pentecost-landscape-7.jpg"
                   alt="Creative and media ministry"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -106,7 +106,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/gallery-4.jpg"
                   alt="Community and prayer"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -121,7 +121,7 @@ export function SurroundingFrameGrid({
               <img
                 src="/assets/gallery-6.jpg"
                 alt=""
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -137,7 +137,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/gallery-2.jpg"
                   alt="United worship across churches"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -181,7 +181,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/gallery-5.jpg"
                   alt="Hearts lifted in prayer"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -192,7 +192,7 @@ export function SurroundingFrameGrid({
               <img
                 src="/assets/pentecost-landscape-8.jpg"
                 alt=""
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full w-full object-cover object-top"
               />
             </div>
@@ -203,7 +203,7 @@ export function SurroundingFrameGrid({
               <img
                 src="/assets/gallery-3.jpg"
                 alt=""
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -219,7 +219,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/gallery-6.jpg"
                   alt="Pentecost Glasgow gathering"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -238,7 +238,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/pentecost-landscape-10.jpg"
                   alt="Ministry of the Word"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -249,7 +249,7 @@ export function SurroundingFrameGrid({
               <img
                 src="/assets/gallery-4.jpg"
                 alt=""
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -260,7 +260,7 @@ export function SurroundingFrameGrid({
               <img
                 src="/assets/gallery-2.jpg"
                 alt=""
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -276,7 +276,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/pentecost-landscape-11.jpg"
                   alt="Worship ministry"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -288,7 +288,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/pentecost-landscape-8.jpg"
                   alt="Discipleship in the Word"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -300,7 +300,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/pentecost-landscape-12.jpg"
                   alt="Gathered across cities"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -317,7 +317,7 @@ export function SurroundingFrameGrid({
                 <img
                   src="/assets/gallery-3.jpg"
                   alt="Serving the body of Christ"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -328,7 +328,7 @@ export function SurroundingFrameGrid({
               <img
                 src="/assets/gallery-5.jpg"
                 alt=""
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -343,7 +343,7 @@ export function SurroundingFrameGrid({
             <img
               src="/assets/gallery-1.jpg"
               alt="Believers gathered in fellowship"
-              loading="lazy"
+              loading="lazy" decoding="async"
               className="h-full w-full object-cover"
             />
           </div>
@@ -351,7 +351,7 @@ export function SurroundingFrameGrid({
             <img
               src="/assets/spirit-light.jpg"
               alt="Outpouring of the Holy Spirit"
-              loading="lazy"
+              loading="lazy" decoding="async"
               className="h-full w-full object-cover"
             />
           </div>
@@ -386,7 +386,7 @@ export function SurroundingFrameGrid({
             <img
               src="/assets/gallery-4.jpg"
               alt="Community prayer"
-              loading="lazy"
+              loading="lazy" decoding="async"
               className="h-full w-full object-cover"
             />
           </div>
@@ -394,7 +394,7 @@ export function SurroundingFrameGrid({
             <img
               src="/assets/gallery-6.jpg"
               alt="Generation set ablaze"
-              loading="lazy"
+              loading="lazy" decoding="async"
               className="h-full w-full object-cover"
             />
           </div>

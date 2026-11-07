@@ -165,6 +165,8 @@ export function PentecostClaritySection() {
             <img
               src={current.image}
               alt={current.imageAlt}
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 size-full object-cover transition-opacity duration-300"
             />
             {/* Dark gradient for text legibility */}

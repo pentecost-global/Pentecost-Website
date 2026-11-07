@@ -98,6 +98,8 @@ export function LeadershipSection({
                   <img
                     src={leader.image}
                     alt={leader.name}
+                    loading="lazy"
+                    decoding="async"
                     className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-night via-night/30 to-transparent" />

@@ -4,8 +4,8 @@ import {
   EnvelopeSimpleIcon,
   FlameIcon,
   InstagramLogoIcon,
+  TiktokLogoIcon,
   UsersThreeIcon,
-  XLogoIcon,
   YoutubeLogoIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import {
@@ -90,17 +90,17 @@ export function Footer() {
                 </a>
 
                 <a
-                  href="https://x.com/pentecostymc"
+                  href="https://tiktok.com/@pentecostglobal"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-badge group"
                 >
-                  <XLogoIcon
-                    size={14}
+                  <TiktokLogoIcon
+                    size={15}
                     weight="bold"
                     className="text-night transition-transform duration-200 group-hover:scale-110"
                   />
-                  <span>@pentecostymc</span>
+                  <span>@pentecostglobal</span>
                 </a>
 
                 <a

@@ -149,7 +149,10 @@ export function PracticalPartnershipSection() {
   };
 
   return (
-    <section className="section bg-[linear-gradient(180deg,var(--background)_0%,var(--secondary)_100%)] border-b border-border/80">
+    <section
+      id="practical-partnership"
+      className="section bg-[linear-gradient(180deg,var(--background)_0%,var(--secondary)_100%)] border-b border-border/80"
+    >
       <div className="site-width">
         {/* Section Header */}
         <ScrollReveal direction="up" distance={20}>
@@ -222,6 +225,8 @@ export function PracticalPartnershipSection() {
                   <img
                     src={pillar.image}
                     alt={pillar.title}
+                    loading="lazy"
+                    decoding="async"
                     className="size-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-85"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-night via-night/40 to-transparent" />

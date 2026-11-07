@@ -146,6 +146,7 @@ export function InteractivePillars() {
                 width={1920}
                 height={1088}
                 loading="lazy"
+                decoding="async"
                 style={{ objectPosition: pillar.objectPosition }}
                 className="transition-transform duration-700 ease-out group-hover:scale-105"
               />

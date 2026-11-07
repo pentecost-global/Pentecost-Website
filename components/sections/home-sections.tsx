@@ -34,6 +34,8 @@ export function HomeHeroSection() {
           alt=""
           width={1920}
           height={1088}
+          loading="eager"
+          decoding="async"
           fetchPriority="high"
         />
 

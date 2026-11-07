@@ -28,7 +28,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/pentecost-portrait-1.jpg"
                   alt="Believers gathered in fellowship"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -36,7 +36,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/pentecost-portrait-3.jpg"
                   alt="Community prayer moment"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -53,7 +53,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/gallery-2.jpg"
                   alt="Worship across denominations"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -61,7 +61,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/pentecost-landscape-7.jpg"
                   alt="Creative and technical ministry team"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -69,7 +69,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/gallery-5.jpg"
                   alt="Hearts lifted in praise"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -86,7 +86,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/pentecost-portrait-2.jpg"
                   alt="Corporate intercession"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -98,7 +98,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/pentecost-portrait-5.jpg"
                   alt="Outpouring of the Holy Spirit"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -110,7 +110,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/pentecost-portrait-8.jpg"
                   alt="Young believers and leaders"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -127,7 +127,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/pentecost-portrait-7.jpg"
                   alt="Ministry of the Word"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -144,7 +144,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/pentecost-landscape-9.jpg"
                   alt="One body in Christ"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -152,7 +152,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/gallery-6.jpg"
                   alt="Pentecost Glasgow gathering"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -160,7 +160,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/pentecost-landscape-11.jpg"
                   alt="Worship ministry"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -177,7 +177,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/pentecost-portrait-6.jpg"
                   alt="Generation set ablaze"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -185,7 +185,7 @@ export function CommunityCollageSection({
                 <img
                   src="/assets/pentecost-portrait-4.jpg"
                   alt="Rooted in Scripture"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
               </div>
@@ -198,7 +198,7 @@ export function CommunityCollageSection({
               <img
                 src="/assets/pentecost-portrait-2.jpg"
                 alt=""
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -206,7 +206,7 @@ export function CommunityCollageSection({
               <img
                 src="/assets/pentecost-portrait-5.jpg"
                 alt=""
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -214,7 +214,7 @@ export function CommunityCollageSection({
               <img
                 src="/assets/pentecost-portrait-8.jpg"
                 alt=""
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>

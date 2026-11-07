@@ -180,6 +180,8 @@ export function RealTestimoniesSection() {
                       <img
                         src={item.image}
                         alt={item.name}
+                        loading="lazy"
+                        decoding="async"
                         className="size-full object-cover object-top"
                       />
                     </div>

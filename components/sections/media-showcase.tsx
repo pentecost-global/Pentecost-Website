@@ -13,62 +13,62 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const VIDEO_MOMENTS = [
   {
-    id: "video-1",
+    id: "glasgow-highlight",
+    src: "/assets/pentecost_glasgow_highlight.mp4",
+    poster: "/assets/pentecost-glasgow-minister.jpg",
+    tag: "01 / PENTECOST GLASGOW",
+    title: "Glasgow Gathering Highlights",
+    caption: "The atmosphere of corporate worship, apostolic preaching, and the Word at Pentecost Glasgow.",
+  },
+  {
+    id: "glasgow-testimonials",
+    src: "/assets/glasgow_testimonials.mp4",
+    poster: "/assets/pentecost-worship-lead.jpg",
+    tag: "02 / GLASGOW TESTIMONIES",
+    title: "Real Encounters & Fruit",
+    caption: "Young believers and students testifying of spiritual renewal and hearts set ablaze.",
+  },
+  {
+    id: "glasgow-full",
+    src: "/assets/pentecost_glasgow.mp4",
+    poster: "/assets/pentecost-glasgow-speaker-praying.jpg",
+    tag: "03 / GLASGOW OUTPOURING",
+    title: "United Under One Lord",
+    caption: "Congregational intercession and unhurried worship uniting believers across Scotland.",
+  },
+  {
+    id: "aberdeen-fellowship",
     src: "/assets/pentecost-video-1.mp4",
     poster: "/assets/pentecost-video-1-poster.jpg",
-    tag: "01 / TESTIMONY & WITNESS",
-    title: "Moments from the Gathering",
-    caption: "Believers sharing in fellowship and expectation for the Holy Spirit.",
-  },
-  {
-    id: "video-3",
-    src: "/assets/pentecost-video-3.mp4",
-    poster: "/assets/pentecost-video-3-poster.jpg",
-    tag: "02 / THE MINISTRY OF THE WORD",
-    title: "Preaching & Prayer Charge",
-    caption: "Strengthening and aligning a generation through sound biblical ministry.",
-  },
-  {
-    id: "video-4",
-    src: "/assets/pentecost-video-4.mp4",
-    poster: "/assets/pentecost-video-4-poster.jpg",
-    tag: "03 / UNIFIED WORSHIP",
-    title: "Hearts Lifted in Worship",
-    caption: "Voices raised across churches and ministries as one body in Christ.",
-  },
-  {
-    id: "video-2",
-    src: "/assets/pentecost-video-2.mp4",
-    poster: "/assets/pentecost-video-2-poster.jpg",
-    tag: "04 / FELLOWSHIP & COMMUNITY",
-    title: "Welcome & Hospitality",
-    caption: "Creating a warm space where young believers and students connect.",
+    tag: "04 / CAMPUS & FELLOWSHIP",
+    title: "Aberdeen Gathering Moments",
+    caption: "Believers sharing in deep fellowship and expectation for a fresh outpouring.",
   },
 ] as const;
 
 const PHOTO_ARCHIVE = [
   {
-    src: "/assets/pentecost-landscape-9.jpg",
-    title: "United Across Ministries",
-    tag: "COMMUNITY",
+    src: "/assets/pentecost-glasgow-minister.jpg",
+    title: "Pentecost Glasgow Ministry of the Word",
+    tag: "GLASGOW",
     span: "md:col-span-2 aspect-[16/10]",
   },
   {
-    src: "/assets/pentecost-portrait-5.jpg",
-    title: "Fervent Intercession",
-    tag: "PRAYER",
+    src: "/assets/pentecost-worship-lead.jpg",
+    title: "Anointed Praise & Worship",
+    tag: "WORSHIP",
     span: "md:col-span-1 aspect-[4/5]",
   },
   {
-    src: "/assets/pentecost-portrait-8.jpg",
-    title: "Proclaiming the Word",
-    tag: "THE WORD",
+    src: "/assets/pentecost-glasgow-speaker-praying.jpg",
+    title: "Corporate Prayer in Glasgow",
+    tag: "INTERCESSION",
     span: "md:col-span-1 aspect-[4/5]",
   },
   {
-    src: "/assets/gallery-6.jpg",
-    title: "Pentecost Glasgow Gathering",
-    tag: "GATHERINGS",
+    src: "/assets/pentecost-landscape-9.jpg",
+    title: "United Across Scottish Ministries",
+    tag: "COMMUNITY",
     span: "md:col-span-2 aspect-[16/10]",
   },
   {
@@ -78,9 +78,9 @@ const PHOTO_ARCHIVE = [
     span: "md:col-span-2 aspect-[16/10]",
   },
   {
-    src: "/assets/pentecost-portrait-2.jpg",
-    title: "Personal Consecration",
-    tag: "DEVOTION",
+    src: "/assets/pentecost-portrait-5.jpg",
+    title: "Fervent Intercession",
+    tag: "PRAYER",
     span: "md:col-span-1 aspect-[4/5]",
   },
 ] as const;
@@ -126,7 +126,7 @@ function VideoCard({
         muted={isMuted}
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -254,6 +254,7 @@ export function MediaShowcaseSection() {
                     src={photo.src}
                     alt={photo.title}
                     loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <figcaption className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,transparent_0%,oklch(12%_0_0/0.86)_100%)] p-5 pt-12">

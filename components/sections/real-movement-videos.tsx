@@ -14,31 +14,31 @@ import { ButtonLink } from "@/components/ui/button";
 
 const REAL_REELS = [
   {
-    id: "reel-1",
-    src: "/assets/pentecost-video-1.mp4",
-    poster: "/assets/pentecost-video-1-poster.jpg",
-    city: "ABERDEEN",
-    tag: "01 / FELLOWSHIP & WITNESS",
-    title: "The Atmosphere of Expectation",
-    caption: "Young believers gathering from across campus fellowships to pray and seek God.",
-  },
-  {
-    id: "reel-2",
-    src: "/assets/pentecost-video-4.mp4",
-    poster: "/assets/pentecost-video-4-poster.jpg",
+    id: "reel-glasgow-highlight",
+    src: "/assets/pentecost_glasgow_highlight.mp4",
+    poster: "/assets/pentecost-glasgow-minister.jpg",
     city: "GLASGOW",
-    tag: "02 / UNIFIED WORSHIP",
-    title: "One Voice Under Heaven",
-    caption: "Unhurried congregational worship lifting high the name of Jesus across denominational lines.",
+    tag: "01 / GLASGOW HIGHLIGHTS",
+    title: "Pentecost Glasgow Gathering",
+    caption: "The atmosphere of corporate worship, prayer, and the Word at the Scottish gathering.",
   },
   {
-    id: "reel-3",
-    src: "/assets/pentecost-video-3.mp4",
-    poster: "/assets/pentecost-video-3-poster.jpg",
-    city: "SCOTLAND",
-    tag: "03 / THE MINISTRY OF THE WORD",
-    title: "The Word & Apostolic Charge",
-    caption: "Sound biblical doctrine piercing through compromise and setting hearts ablaze.",
+    id: "reel-glasgow-testimonials",
+    src: "/assets/glasgow_testimonials.mp4",
+    poster: "/assets/pentecost-worship-lead.jpg",
+    city: "GLASGOW",
+    tag: "02 / TESTIMONIES & WITNESS",
+    title: "Glasgow Encounters & Stories",
+    caption: "Young believers and students sharing real testimonies of transformation and renewed hunger.",
+  },
+  {
+    id: "reel-glasgow-full",
+    src: "/assets/pentecost_glasgow.mp4",
+    poster: "/assets/pentecost-glasgow-speaker-praying.jpg",
+    city: "GLASGOW",
+    tag: "03 / THE OUTPOURING",
+    title: "One Generation Set Ablaze",
+    caption: "Unhurried congregational intercession and passionate worship across church denominations.",
   },
 ] as const;
 
@@ -79,7 +79,7 @@ function MovementReelCard({ item }: { item: (typeof REAL_REELS)[number] }) {
         muted={isMuted}
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"

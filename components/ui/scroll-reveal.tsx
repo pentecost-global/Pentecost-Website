@@ -79,7 +79,7 @@ export function ScrollReveal({
     transitionDuration: `${duration}ms`,
     transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
     transitionDelay: `${delay}ms`,
-    willChange: "opacity, transform",
+    willChange: isVisible ? "auto" : "opacity, transform",
   };
 
   return (

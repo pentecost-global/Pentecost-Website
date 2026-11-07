@@ -129,7 +129,30 @@ export function CurvedGallerySection({
       }
     };
 
+    let isVisible = true;
+    const stageEl = stageRef.current;
+    let observer: IntersectionObserver | null = null;
+
+    if (stageEl && typeof IntersectionObserver !== "undefined") {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          isVisible = entry.isIntersecting;
+          if (isVisible && !rafId) {
+            lastTime = performance.now();
+            rafId = requestAnimationFrame(animate);
+          }
+        },
+        { rootMargin: "200px 0px" }
+      );
+      observer.observe(stageEl);
+    }
+
     const animate = (now: number) => {
+      if (!isVisible) {
+        rafId = 0;
+        return;
+      }
+
       const dt = Math.min(48, now - lastTime);
       lastTime = now;
 
@@ -153,7 +176,7 @@ export function CurvedGallerySection({
             card.style.opacity = "1";
           }
         });
-        rafId = requestAnimationFrame(animate);
+        rafId = 0;
         return;
       }
 
@@ -208,7 +231,8 @@ export function CurvedGallerySection({
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      cancelAnimationFrame(rafId);
+      if (observer) observer.disconnect();
+      if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
 
@@ -292,6 +316,7 @@ export function CurvedGallerySection({
                     src={frame.src}
                     alt={frame.label}
                     loading={isHero ? "eager" : "lazy"}
+                    decoding="async"
                   />
                   <div className="curved-card-overlay">
                     <span className="text-[9px] font-bold tracking-[0.14em] uppercase text-ember">
