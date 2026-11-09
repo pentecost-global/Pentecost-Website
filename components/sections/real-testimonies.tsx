@@ -3,6 +3,7 @@
 import * as React from "react";
 import {
   ArrowUpRightIcon,
+  CaretDownIcon,
   ChatCircleTextIcon,
   FlameIcon,
   HeartIcon,
@@ -83,11 +84,14 @@ export const REAL_TESTIMONIES: Testimony[] = [
 
 export function RealTestimoniesSection() {
   const [filter, setFilter] = React.useState<string>("all");
+  const [showAllStories, setShowAllStories] = React.useState<boolean>(false);
 
   const filtered =
     filter === "all"
       ? REAL_TESTIMONIES
       : REAL_TESTIMONIES.filter((t) => t.category === filter);
+
+  const visibleStories = showAllStories ? filtered : filtered.slice(0, 2);
 
   return (
     <section className="section bg-[linear-gradient(180deg,var(--secondary)_0%,var(--background)_100%)] border-b border-border/80">
@@ -142,9 +146,9 @@ export function RealTestimoniesSection() {
           ))}
         </div>
 
-        {/* Testimonials Grid */}
+        {/* Testimonials Grid (Compact Default View) */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filtered.map((item, idx) => (
+          {visibleStories.map((item, idx) => (
             <ScrollReveal
               key={item.id}
               direction="up"
@@ -203,6 +207,31 @@ export function RealTestimoniesSection() {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Compact Expand / Collapse Toggle */}
+        {filtered.length > 2 && (
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAllStories((prev) => !prev)}
+              className="inline-flex items-center gap-2 rounded-sm border border-border bg-background px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-primary hover:border-primary/60 hover:bg-secondary transition-all cursor-pointer shadow-xs"
+              aria-expanded={showAllStories}
+            >
+              <span>
+                {showAllStories
+                  ? "Show Fewer Stories ↑"
+                  : `Read More Real Stories (${filtered.length - 2} More) ↓`}
+              </span>
+              <CaretDownIcon
+                size={14}
+                weight="bold"
+                className={`transition-transform duration-200 ${
+                  showAllStories ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

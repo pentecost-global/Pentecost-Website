@@ -3,6 +3,7 @@ import { PageHero } from "@/components/page-hero";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { CommunityCollageSection } from "@/components/sections/community-collage";
 import { PracticalPartnershipSection } from "@/components/sections/practical-partnership";
+import { ChurchPartnersDirectory } from "@/components/sections/church-partners-directory";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { CtaBand } from "@/components/cta-band";
 
@@ -65,6 +66,9 @@ export default function PartnersPage() {
         titleLine1="Standing together with churches and leaders"
         titleLine2="across ministries, campuses and Christian unions"
       />
+
+      {/* Dedicated Partner Churches Directory (Hidden from public by default until launch) */}
+      <ChurchPartnersDirectory />
 
       {/* Direct Partnership Enquiry Form */}
       <section className="section" id="partner-enquiry-section">

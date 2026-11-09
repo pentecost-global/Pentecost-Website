@@ -130,10 +130,11 @@ export function PageHero({
               <div className="relative">
                 <div className="aspect-[4/5] overflow-hidden rounded-sm border border-border bg-night">
                   <img
-                    src="/assets/pentecost-portrait-8.jpg"
+                    src="/assets/about-hero-portrait.jpg"
                     alt="Worship and prayer gathering"
-                    loading="lazy"
+                    loading="eager"
                     decoding="async"
+                    fetchPriority="high"
                     className="h-full w-full object-cover opacity-95"
                   />
                 </div>

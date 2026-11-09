@@ -4,6 +4,7 @@ import * as React from "react";
 import {
   ArrowDownIcon,
   ArrowUpRightIcon,
+  CaretDownIcon,
   CheckCircleIcon,
   ChurchIcon,
   HandHeartIcon,
@@ -129,6 +130,11 @@ export const PRACTICAL_PILLARS: PracticalPillar[] = [
 
 export function PracticalPartnershipSection() {
   const [selectedPillar, setSelectedPillar] = React.useState<string>("all");
+  const [expandedCards, setExpandedCards] = React.useState<Record<string, boolean>>({});
+
+  const toggleCard = (id: string) => {
+    setExpandedCards((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
 
   const filteredPillars =
     selectedPillar === "all"
@@ -273,21 +279,50 @@ export function PracticalPartnershipSection() {
                       </p>
                     </div>
 
-                    {/* Concrete Checklist */}
-                    <div className="mt-5 space-y-2">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-foreground">
-                        What this looks like in practice:
-                      </span>
-                      {pillar.concreteActions.map((action, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5 text-xs text-foreground/80">
-                          <CheckCircleIcon
-                            size={15}
-                            weight="fill"
-                            className="text-primary shrink-0 mt-0.5"
-                          />
-                          <span>{action}</span>
+                    {/* Collapsible Action Checklist (Compact Default View) */}
+                    <div className="mt-4 pt-3 border-t border-border/80">
+                      <button
+                        type="button"
+                        onClick={() => toggleCard(pillar.id)}
+                        className="w-full flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-primary hover:underline cursor-pointer py-1"
+                        aria-expanded={selectedPillar !== "all" || !!expandedCards[pillar.id]}
+                      >
+                        <span>
+                          {selectedPillar !== "all" || expandedCards[pillar.id]
+                            ? "Hide Action Steps ↑"
+                            : `View Action Steps (${pillar.concreteActions.length} items) ↓`}
+                        </span>
+                        <CaretDownIcon
+                          size={13}
+                          weight="bold"
+                          className={`transition-transform duration-200 ${
+                            selectedPillar !== "all" || expandedCards[pillar.id]
+                              ? "rotate-180"
+                              : "rotate-0"
+                          }`}
+                        />
+                      </button>
+
+                      <div
+                        className={`grid transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                          selectedPillar !== "all" || expandedCards[pillar.id]
+                            ? "grid-rows-[1fr] opacity-100 mt-2"
+                            : "grid-rows-[0fr] opacity-0 mt-0"
+                        }`}
+                      >
+                        <div className="overflow-hidden space-y-2 pt-1">
+                          {pillar.concreteActions.map((action, idx) => (
+                            <div key={idx} className="flex items-start gap-2.5 text-xs text-foreground/80">
+                              <CheckCircleIcon
+                                size={15}
+                                weight="fill"
+                                className="text-primary shrink-0 mt-0.5"
+                              />
+                              <span>{action}</span>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      </div>
                     </div>
                   </div>
 

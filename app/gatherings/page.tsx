@@ -6,6 +6,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { PageHero } from "@/components/page-hero";
 import { GatheringsList } from "@/components/gatherings-list";
+import { PastGatheringsSection } from "@/components/sections/past-gatherings";
 import { ValueCard } from "@/components/ui/value-card";
 import { TextLink } from "@/components/ui/text-link";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -49,6 +50,9 @@ export default function GatheringsPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Historical Pentecost Gatherings: Coventry, Aberdeen, Plymouth, Glasgow (twice) */}
+      <PastGatheringsSection />
 
       <section className="section soft-section">
         <div className="site-width">

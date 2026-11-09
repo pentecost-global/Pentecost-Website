@@ -7,6 +7,7 @@ import {
   FlameIcon,
   HandHeartIcon,
   HandsPrayingIcon,
+  MapPinLineIcon,
   MusicNotesIcon,
   UsersIcon,
   UsersThreeIcon,
@@ -356,6 +357,33 @@ export function GatherWithUsSection() {
 
         <ScrollReveal direction="up" distance={24} delay={100}>
           <GatheringsList />
+        </ScrollReveal>
+
+        {/* Compact Past Gatherings Journey Teaser */}
+        <ScrollReveal direction="up" distance={20} delay={150}>
+          <div className="mt-6 rounded-sm border border-border bg-secondary/60 p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex size-9 items-center justify-center rounded-sm bg-accent text-primary shrink-0">
+                <MapPinLineIcon size={19} weight="duotone" />
+              </span>
+              <div>
+                <p className="font-display text-xs sm:text-sm font-bold text-foreground">
+                  The Journey So Far: Coventry · Aberdeen · Plymouth · Glasgow (twice)
+                </p>
+                <p className="text-[11px] text-muted-foreground mt-0.5">
+                  See where the Holy Spirit has touched lives and unified churches across the UK.
+                </p>
+              </div>
+            </div>
+            <ButtonLink
+              variant="outline"
+              size="sm"
+              href="/gatherings#past-gatherings"
+              className="shrink-0"
+            >
+              Explore Past Gatherings <ArrowUpRightIcon size={14} weight="bold" />
+            </ButtonLink>
+          </div>
         </ScrollReveal>
       </div>
     </section>

@@ -5,6 +5,9 @@ import {
   ArrowSquareOutIcon,
   ArrowUpRightIcon,
   BroadcastIcon,
+  CaretDownIcon,
+  CaretLeftIcon,
+  CaretRightIcon,
   ChatCircleDotsIcon,
   CheckCircleIcon,
   ChurchIcon,
@@ -122,6 +125,39 @@ export function CallForVolunteersSection({
   showFlyers?: boolean;
 }) {
   const [activeSlide, setActiveSlide] = React.useState(0);
+  const [showAllTeams, setShowAllTeams] = React.useState(false);
+  const [isSlidePaused, setIsSlidePaused] = React.useState(false);
+  const touchStartX = React.useRef<number | null>(null);
+
+  // Auto-swipe every 5.5 seconds, paused on hover or touch
+  React.useEffect(() => {
+    if (isSlidePaused) return;
+    const timer = setInterval(() => {
+      setActiveSlide((prev) =>
+        prev === MOVEMENT_SLIDES.length - 1 ? 0 : prev + 1
+      );
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [isSlidePaused]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (deltaX > 45) {
+      setActiveSlide((prev) =>
+        prev === 0 ? MOVEMENT_SLIDES.length - 1 : prev - 1
+      );
+    } else if (deltaX < -45) {
+      setActiveSlide((prev) =>
+        prev === MOVEMENT_SLIDES.length - 1 ? 0 : prev + 1
+      );
+    }
+  };
 
   return (
     <section
@@ -186,9 +222,9 @@ export function CallForVolunteersSection({
                 talents, and passion. Choose one of the 10 teams below and submit your application.
               </p>
 
-              {/* 10 Teams Grid */}
+              {/* 10 Teams Grid (Compact Layout with Smooth Expand/Collapse) */}
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {VOLUNTEER_TEAMS.map((team, idx) => {
+                {(showAllTeams ? VOLUNTEER_TEAMS : VOLUNTEER_TEAMS.slice(0, 4)).map((team) => {
                   const Icon = team.icon;
                   return (
                     <div
@@ -210,6 +246,29 @@ export function CallForVolunteersSection({
                     </div>
                   );
                 })}
+              </div>
+
+              {/* Expand / Collapse Button */}
+              <div className="mt-3.5">
+                <button
+                  type="button"
+                  onClick={() => setShowAllTeams((prev) => !prev)}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary hover:underline cursor-pointer"
+                  aria-expanded={showAllTeams}
+                >
+                  <span>
+                    {showAllTeams
+                      ? "Show Fewer Teams ↑"
+                      : `View All 10 Ministry Teams (${VOLUNTEER_TEAMS.length - 4} More) ↓`}
+                  </span>
+                  <CaretDownIcon
+                    size={13}
+                    weight="bold"
+                    className={`transition-transform duration-200 ${
+                      showAllTeams ? "rotate-180" : "rotate-0"
+                    }`}
+                  />
+                </button>
               </div>
             </div>
 
@@ -290,7 +349,7 @@ export function CallForVolunteersSection({
           </div>
         </div>
 
-        {/* Foundation & Vision Slides Strip */}
+        {/* Foundation & Vision Slides (Compact Interactive Carousel / Slide Switcher) */}
         {showFlyers && (
           <div className="mt-14 pt-10 border-t border-border">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
@@ -300,41 +359,114 @@ export function CallForVolunteersSection({
                   Our Heart, Foundation &amp; River
                 </h3>
               </div>
-              <span className="text-xs text-muted-foreground font-medium">
-                Official Pentecost Vision Deck
-              </span>
+
+              {/* Carousel Navigation Buttons & Indicator */}
+              <div className="flex items-center gap-3">
+                <span className="text-xs text-muted-foreground font-medium">
+                  Slide {activeSlide + 1} of {MOVEMENT_SLIDES.length}
+                </span>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setActiveSlide((prev) =>
+                        prev === 0 ? MOVEMENT_SLIDES.length - 1 : prev - 1
+                      )
+                    }
+                    aria-label="Previous slide"
+                    className="inline-flex size-8 items-center justify-center rounded-sm border border-border bg-background text-foreground hover:bg-secondary hover:border-primary/50 transition-colors cursor-pointer"
+                  >
+                    <CaretLeftIcon size={16} weight="bold" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setActiveSlide((prev) =>
+                        prev === MOVEMENT_SLIDES.length - 1 ? 0 : prev + 1
+                      )
+                    }
+                    aria-label="Next slide"
+                    className="inline-flex size-8 items-center justify-center rounded-sm border border-border bg-background text-foreground hover:bg-secondary hover:border-primary/50 transition-colors cursor-pointer"
+                  >
+                    <CaretRightIcon size={16} weight="bold" />
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {MOVEMENT_SLIDES.map((slide, idx) => (
-                <div
-                  key={slide.title}
-                  className="rounded-sm border border-border bg-background overflow-hidden flex flex-col justify-between group hover:border-primary/60 transition-all"
-                >
-                  <div className="relative aspect-square w-full overflow-hidden bg-night">
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      loading="lazy"
-                      decoding="async"
-                      className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary">
-                        {slide.subtitle}
-                      </span>
-                      <h4 className="font-display text-base font-bold text-foreground mt-0.5">
-                        {slide.title}
-                      </h4>
-                      <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                        {slide.copy}
-                      </p>
-                    </div>
+            {/* Quick Slide Selector Tabs */}
+            <div className="flex flex-wrap items-center gap-2 mb-6">
+              {MOVEMENT_SLIDES.map((slide, idx) => {
+                const isActive = idx === activeSlide;
+                return (
+                  <button
+                    key={slide.title}
+                    type="button"
+                    onClick={() => setActiveSlide(idx)}
+                    className={`px-3 py-1.5 rounded-sm text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                      isActive
+                        ? "bg-primary text-primary-foreground shadow-xs"
+                        : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80 border border-border"
+                    }`}
+                  >
+                    {slide.title}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Featured Active Slide Card (Compact Showcase with Touch Swipe & Auto-Swipe) */}
+            <div
+              onMouseEnter={() => setIsSlidePaused(true)}
+              onMouseLeave={() => setIsSlidePaused(false)}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              className="rounded-md border border-border bg-background overflow-hidden shadow-xs select-none touch-pan-y"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-12 items-stretch">
+                <div className="md:col-span-5 relative min-h-[260px] md:min-h-[320px] bg-night overflow-hidden">
+                  <img
+                    src={MOVEMENT_SLIDES[activeSlide].image}
+                    alt={MOVEMENT_SLIDES[activeSlide].title}
+                    loading="lazy"
+                    decoding="async"
+                    className="size-full object-cover transition-all duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-night/85 via-transparent to-transparent" />
+                  <div className="absolute top-3 left-3">
+                    <span className="hero-glass-card px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-ember">
+                      {MOVEMENT_SLIDES[activeSlide].subtitle}
+                    </span>
                   </div>
                 </div>
-              ))}
+
+                <div className="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
+                  <div>
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-primary block">
+                      {MOVEMENT_SLIDES[activeSlide].subtitle}
+                    </span>
+                    <h4 className="font-display text-2xl sm:text-3xl font-bold text-foreground mt-1">
+                      {MOVEMENT_SLIDES[activeSlide].title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground mt-4 leading-relaxed max-w-xl">
+                      {MOVEMENT_SLIDES[activeSlide].copy}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 pt-4 border-t border-border flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground">
+                      Official Pentecost Vision Deck
+                    </span>
+                    <ButtonLink
+                      variant="outline"
+                      size="sm"
+                      href="/about"
+                    >
+                      Read Full Mandate <ArrowUpRightIcon size={14} weight="bold" />
+                    </ButtonLink>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}

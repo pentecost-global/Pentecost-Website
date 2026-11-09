@@ -3,17 +3,21 @@
 import * as React from "react";
 import {
   ArrowUpRightIcon,
+  CaretDownIcon,
   CheckCircleIcon,
   EnvelopeSimpleIcon,
   HandHeartIcon,
   HandsPrayingIcon,
   ShieldCheckIcon,
+  SparkleIcon,
+  UserIcon,
   UsersThreeIcon,
 } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { ButtonLink } from "@/components/ui/button";
 
 export interface LeaderProfile {
+  id: string;
   name: string;
   role: string;
   responsibility: string;
@@ -24,36 +28,40 @@ export interface LeaderProfile {
 
 export const LEADERS: LeaderProfile[] = [
   {
-    name: "Daniel Friday Olanrewaju",
-    role: "Convener & Movement Lead",
-    badge: "Vision & Apostolic Lead",
-    image: "/assets/pentecost-landscape-10.jpg",
+    id: "lead-convener",
+    name: "Movement Convener",
+    role: "Vision & Apostolic Lead",
+    badge: "Vision Stewardship",
+    image: "/assets/pentecost-glasgow-minister.jpg",
     responsibility: "Vision Stewardship · Ministry of the Word · Cross-Church Alignment",
-    bio: "Daniel birthed Pentecost during midnight prayer on 20 June 2025. He carries a burning apostolic burden to see young believers consecrated, delivered from surface religion, aligned with biblical truth, and commissioned to serve Christ in their local churches and cities.",
+    bio: "Carries the foundational apostolic burden birthed during midnight prayer on 20 June 2025. Committed to seeing young believers consecrated, delivered from superficial religion, aligned with biblical truth, and commissioned to serve Christ in their local churches and cities.",
   },
   {
-    name: "Priscilla Otuagoma",
-    role: "Prayer & Gathering Coordination",
+    id: "lead-prayer",
+    name: "Gatherings & Prayer Steward",
+    role: "Corporate Intercession & Coordination",
     badge: "Intercession & Ministry",
-    image: "/assets/pentecost-portrait-7.jpg",
-    responsibility: "Corporate Intercession · Gatherings Protocol · Student Pastoral Care",
-    bio: "Priscilla stewards corporate intercession, pre-gathering midnight prayer watches, and attendee pastoral ministry. She is committed to preparing holy ground where young believers encounter the life-changing presence of the Holy Spirit.",
+    image: "/assets/pentecost-worship-lead.jpg",
+    responsibility: "Pre-Gathering Midnight Watches · Corporate Intercession · Student Pastoral Care",
+    bio: "Stewards corporate prayer chains, pre-gathering intercessory shields, and gathering flow. Devoted to preparing holy ground where attendees encounter the life-transforming presence and holiness of the Holy Spirit.",
   },
   {
-    name: "Jessica Michael-Odobi",
-    role: "Creative Direction & Media Lead",
-    badge: "Creative & Brand",
-    image: "/assets/pentecost-portrait-4.jpg",
-    responsibility: "Media Witness · Visual Storytelling · Digital Outreach",
-    bio: "Jessica leads Pentecost's creative direction, visual identity, and media documentation. She ensures that real testimonies and the message of revival are stewarded with reverence, artistic excellence, and clarity for a digital generation.",
+    id: "lead-media",
+    name: "Creative & Media Steward",
+    role: "Creative Direction & Media Witness",
+    badge: "Creative & Media",
+    image: "/assets/pentecost-landscape-7.jpg",
+    responsibility: "Media Witness · Visual Identity · Testimonies Documentation",
+    bio: "Guides creative direction, digital communications, and testimony recording. Dedicated to stewarding the movement's message with reverence, artistic excellence, and clarity for a digital generation.",
   },
   {
-    name: "Oluwatomi Jimoh",
-    role: "Operations & Church Relations",
+    id: "lead-operations",
+    name: "Operations & Church Liaison",
+    role: "Church Relations & Logistics",
     badge: "Operations & Liaison",
-    image: "/assets/pentecost-portrait-3.jpg",
-    responsibility: "Church Partnership Liaison · Venue Logistics · Team Deployment",
-    bio: "Oluwatomi coordinates operations, venue arrangements, and ongoing relations with host church pastors and campus Christian Unions. He ensures that every city gathering operates smoothly, safely, and in full honour of local venues.",
+    image: "/assets/pentecost-glasgow-speaker-praying.jpg",
+    responsibility: "Church Partnership Liaison · Host City Logistics · Team Deployment",
+    bio: "Coordinates operations, auditorium logistics, and relation-building with host pastors and Christian Unions. Ensures that every city gathering operates safely, in full biblical order and honor of host churches.",
   },
 ];
 
@@ -64,6 +72,12 @@ export function LeadershipSection({
   showCta?: boolean;
   isHomeTeaser?: boolean;
 }) {
+  const [expandedLeaderId, setExpandedLeaderId] = React.useState<string | null>(null);
+
+  const toggleLeaderBio = (id: string) => {
+    setExpandedLeaderId((prev) => (prev === id ? null : id));
+  };
+
   return (
     <section className="section bg-[linear-gradient(180deg,var(--background)_0%,var(--secondary)_100%)] border-b border-border/70 relative">
       <div className="site-width">
@@ -73,72 +87,118 @@ export function LeadershipSection({
             <div>
               <p className="eyebrow section-label">Credibility &amp; Stewards</p>
               <h2 className="tracking-[-0.04em] text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground">
-                Who Is Behind Pentecost
+                Meet the Leadership Team
               </h2>
             </div>
             <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
               We believe in open faces, faithful stewardship, and ministerial credibility.
-              Meet the servants guiding the vision under biblical accountability.
+              Meet the servants guiding the vision under biblical accountability and pastoral covering.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Leaders Grid */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {LEADERS.map((leader, idx) => (
-            <ScrollReveal
-              key={leader.name}
-              direction="up"
-              distance={24}
-              delay={idx * 80}
-            >
-              <div className="group h-full flex flex-col justify-between rounded-sm border border-border bg-background overflow-hidden transition-all duration-300 hover:border-primary/60 hover:-translate-y-1 hover:shadow-md">
-                {/* Photo */}
-                <div className="relative aspect-[4/4.5] w-full overflow-hidden bg-night">
-                  <img
-                    src={leader.image}
-                    alt={leader.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-night via-night/30 to-transparent" />
-                  
-                  {/* Floating role badge */}
-                  <div className="absolute top-3 left-3">
-                    <span className="hero-glass-card px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-ember">
-                      {leader.badge}
-                    </span>
+        {/* Temporary Notice: Profiles being updated for launch */}
+        <div className="mt-6 rounded-sm border border-primary/25 bg-accent/40 p-4 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <span className="inline-flex size-7 items-center justify-center rounded-sm bg-primary/10 text-primary shrink-0">
+              <SparkleIcon size={15} weight="duotone" />
+            </span>
+            <p className="text-xs text-foreground/90">
+              <strong>Leadership Profiles Staged:</strong> Full steward names, biographies, and confirmed portraits are currently being updated in alignment with our ministerial covering before our official launch.
+            </p>
+          </div>
+        </div>
+
+        {/* Leaders Grid (items-start prevents other cards from stretching when one bio expands) */}
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+          {LEADERS.map((leader, idx) => {
+            const isExpanded = expandedLeaderId === leader.id;
+
+            return (
+              <ScrollReveal
+                key={leader.id}
+                direction="up"
+                distance={24}
+                delay={idx * 80}
+              >
+                <div className="group flex flex-col justify-start rounded-sm border border-border bg-background overflow-hidden transition-all duration-300 hover:border-primary/60 hover:-translate-y-1 hover:shadow-md">
+                  {/* Photo with Overlay */}
+                  <div className="relative aspect-[4/4.5] w-full overflow-hidden bg-night">
+                    <img
+                      src={leader.image}
+                      alt={leader.name}
+                      loading="lazy"
+                      decoding="async"
+                      className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105 opacity-90"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-night via-night/35 to-transparent" />
+
+                    {/* Floating role badge */}
+                    <div className="absolute top-3 left-3">
+                      <span className="hero-glass-card px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-ember">
+                        {leader.badge}
+                      </span>
+                    </div>
+
+                    {/* Name & Role overlay */}
+                    <div className="absolute bottom-3 left-3 right-3 text-on-dark">
+                      <h3 className="font-display text-lg sm:text-xl font-bold leading-tight text-on-dark">
+                        {leader.name}
+                      </h3>
+                      <p className="text-xs font-semibold text-ember mt-0.5">
+                        {leader.role}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Name overlay */}
-                  <div className="absolute bottom-3 left-3 right-3 text-on-dark">
-                    <h3 className="font-display text-lg sm:text-xl font-bold leading-tight text-on-dark">
-                      {leader.name}
-                    </h3>
-                    <p className="text-xs font-semibold text-ember mt-0.5">
-                      {leader.role}
-                    </p>
-                  </div>
-                </div>
+                  {/* Details Card (Compact with Consistent Baseline) */}
+                  <div className="p-5 flex flex-col justify-start">
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary">
+                        Areas of Responsibility
+                      </span>
+                      <p className="text-xs font-medium text-foreground/80 mt-1 pb-3 border-b border-border/80 min-h-[42px] leading-relaxed">
+                        {leader.responsibility}
+                      </p>
 
-                {/* Details */}
-                <div className="p-5 flex-1 flex flex-col justify-between">
-                  <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-primary">
-                      Responsibilities
-                    </span>
-                    <p className="text-xs font-medium text-foreground/80 mt-1 pb-3 border-b border-border/80">
-                      {leader.responsibility}
-                    </p>
-                    <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-                      {leader.bio}
-                    </p>
+                      {/* Collapsible Bio Drawer (Expands ONLY this card downward) */}
+                      <div className="mt-3">
+                        <button
+                          type="button"
+                          onClick={() => toggleLeaderBio(leader.id)}
+                          className="w-full flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-primary hover:underline cursor-pointer py-1"
+                          aria-expanded={isExpanded}
+                        >
+                          <span>{isExpanded ? "Hide Bio" : "Read Full Bio"}</span>
+                          <CaretDownIcon
+                            size={14}
+                            weight="bold"
+                            className={`transition-transform duration-200 ${
+                              isExpanded ? "rotate-180" : "rotate-0"
+                            }`}
+                          />
+                        </button>
+
+                        <div
+                          className={`grid transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                            isExpanded
+                              ? "grid-rows-[1fr] opacity-100 mt-2"
+                              : "grid-rows-[0fr] opacity-0 mt-0"
+                          }`}
+                        >
+                          <div className="overflow-hidden">
+                            <p className="text-xs leading-relaxed text-muted-foreground pt-1 pb-1">
+                              {leader.bio}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            );
+          })}
         </div>
 
         {/* Ministerial Accountability & Covering Callout */}
@@ -178,18 +238,18 @@ export function LeadershipSection({
               <ButtonLink
                 variant="movement"
                 size="lg"
-                href="/contact"
-                className="w-full text-center"
+                href="/partners"
+                className="w-full justify-center"
               >
-                Connect With Leadership <ArrowUpRightIcon size={16} weight="bold" />
+                Church Partnership <ArrowUpRightIcon size={16} weight="bold" />
               </ButtonLink>
               <ButtonLink
-                variant="secondary"
+                variant="outline"
                 size="lg"
-                href="/partners"
-                className="w-full text-center"
+                href="/contact"
+                className="w-full justify-center"
               >
-                Pastoral Partnership <ArrowUpRightIcon size={16} weight="bold" />
+                Connect With Leadership
               </ButtonLink>
             </div>
           </div>
@@ -198,4 +258,3 @@ export function LeadershipSection({
     </section>
   );
 }
-
