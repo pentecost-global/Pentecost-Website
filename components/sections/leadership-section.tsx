@@ -5,64 +5,106 @@ import {
   ArrowUpRightIcon,
   CaretDownIcon,
   CheckCircleIcon,
-  EnvelopeSimpleIcon,
-  HandHeartIcon,
-  HandsPrayingIcon,
+  FlameIcon,
   ShieldCheckIcon,
   SparkleIcon,
-  UserIcon,
   UsersThreeIcon,
 } from "@phosphor-icons/react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { ButtonLink } from "@/components/ui/button";
 
-export interface LeaderProfile {
+export interface FounderProfile {
+  id: string;
+  names: string;
+  role: string;
+  motto: string;
+  image: string;
+  badge: string;
+  bio: string;
+  tags: string[];
+}
+
+export interface DepartmentalLead {
   id: string;
   name: string;
   role: string;
+  badge: string;
   responsibility: string;
   bio: string;
   image: string;
-  badge: string;
 }
 
-export const LEADERS: LeaderProfile[] = [
+export const FOUNDERS: FounderProfile = {
+  id: "daniel-priscilla-olanrewaju",
+  names: "Daniel & Priscilla Olanrewaju",
+  role: "Vision Bearers & Founders of Pentecost",
+  motto: "One Spirit. One Body. One Generation Set Ablaze.",
+  badge: "Vision Bearers & Founders",
+  image: "/assets/daniel-priscilla-olanrewaju.png",
+  bio: "Daniel and Priscilla Olanrewaju are the vision bearers of Pentecost, united by a God-given burden to see a generation awakened, empowered and set ablaze by the Holy Spirit. Through Pentecost, they are passionate about bringing believers together across churches and cities to encounter God, rediscover their true identity in Christ and fulfil their divine purpose.",
+  tags: ["Spiritual Burden", "Generation Awakened", "Cross-Church Unity"],
+};
+
+export const DEPARTMENT_LEADS: DepartmentalLead[] = [
   {
-    id: "lead-convener",
-    name: "Movement Convener",
-    role: "Vision & Apostolic Lead",
-    badge: "Vision Stewardship",
-    image: "/assets/pentecost-glasgow-minister.jpg",
-    responsibility: "Vision Stewardship · Ministry of the Word · Cross-Church Alignment",
-    bio: "Carries the foundational apostolic burden birthed during midnight prayer on 20 June 2025. Committed to seeing young believers consecrated, delivered from superficial religion, aligned with biblical truth, and commissioned to serve Christ in their local churches and cities.",
+    id: "rosemary-dada",
+    name: "Rosemary Dada",
+    role: "Pentecost Core Strategy Lead",
+    badge: "Core Strategy",
+    responsibility: "Planning & Coordination · One Accord Alignment · Operational Excellence",
+    image: "/assets/rosemary-dada.jpeg",
+    bio: "I serve as the Core Strategy Lead for Pentecost, overseeing planning and coordination so that everything runs with order and excellence. I work closely with the teams to ensure we are aligned and moving together in one accord, with a heart to see Pentecost be a true encounter where lives are transformed by the Holy Spirit.",
   },
   {
-    id: "lead-prayer",
-    name: "Gatherings & Prayer Steward",
-    role: "Corporate Intercession & Coordination",
-    badge: "Intercession & Ministry",
-    image: "/assets/pentecost-worship-lead.jpg",
-    responsibility: "Pre-Gathering Midnight Watches · Corporate Intercession · Student Pastoral Care",
-    bio: "Stewards corporate prayer chains, pre-gathering intercessory shields, and gathering flow. Devoted to preparing holy ground where attendees encounter the life-transforming presence and holiness of the Holy Spirit.",
+    id: "adekanmi-peter",
+    name: "Adekanmi Kolawole Peter",
+    role: "Pentecost Witnesses & Publicity Lead",
+    badge: "Witnesses & Publicity",
+    responsibility: "Publicity Coordination · Evangelism · Strategic City Outreach",
+    image: "/assets/adekanmi-kolawole-peter.jpeg",
+    bio: "I serve as part of the Pentecost leadership team, coordinating publicity, evangelism and strategic outreach to mobilise people for each gathering. I work closely with the Witness Team to strengthen our reach, build meaningful connections and ensure that the message of Pentecost reaches people across cities and communities. My heart is to see lives transformed through genuine encounters with the Holy Spirit.",
   },
   {
-    id: "lead-media",
-    name: "Creative & Media Steward",
-    role: "Creative Direction & Media Witness",
-    badge: "Creative & Media",
-    image: "/assets/pentecost-landscape-7.jpg",
-    responsibility: "Media Witness · Visual Identity · Testimonies Documentation",
-    bio: "Guides creative direction, digital communications, and testimony recording. Dedicated to stewarding the movement's message with reverence, artistic excellence, and clarity for a digital generation.",
+    id: "jessica-odobi",
+    name: "Jessica Michael-Odobi",
+    role: "Pentecost Brand & Creative Lead",
+    badge: "Brand & Creative",
+    responsibility: "Visual Identity · Creative Direction · Publicity Materials Design",
+    image: "/assets/jessica-michael-odobi.jpeg",
+    bio: "I serve as the Brand & Creative Lead for Pentecost, overseeing the visual identity, creative direction and design of our publicity materials. I work closely with the team to ensure that every creative expression communicates the vision of Pentecost with excellence, consistency and impact. My heart is to see creativity used as a powerful tool to communicate the message of the Holy Spirit and draw people into life-transforming encounters with God.",
   },
   {
-    id: "lead-operations",
-    name: "Operations & Church Liaison",
-    role: "Church Relations & Logistics",
-    badge: "Operations & Liaison",
-    image: "/assets/pentecost-glasgow-speaker-praying.jpg",
-    responsibility: "Church Partnership Liaison · Host City Logistics · Team Deployment",
-    bio: "Coordinates operations, auditorium logistics, and relation-building with host pastors and Christian Unions. Ensures that every city gathering operates safely, in full biblical order and honor of host churches.",
+    id: "michael-odobi",
+    name: "Michael Odobi",
+    role: "Pentecost Head of Technical",
+    badge: "Head of Technical",
+    responsibility: "Technical Planning · Gathering Delivery · Sound & Atmosphere",
+    image: "/assets/michael-odobi.jpeg",
+    bio: "I serve as the Head of Technical for Pentecost, overseeing the technical planning, coordination and delivery of our gatherings to ensure everything runs seamlessly and with excellence. I work closely with the team to create an atmosphere where technology supports the vision of Pentecost without distraction. My heart is to see every technical detail serve a greater purpose: creating an environment where people can encounter the presence and power of the Holy Spirit.",
   },
+  {
+    id: "grace-eloh",
+    name: "Grace Eloh",
+    role: "Pentecost Administrative Lead",
+    badge: "Administrative Lead",
+    responsibility: "Administration · Information Management · Follow-Up Stewardship",
+    image: "/assets/grace-eloh.jpeg",
+    bio: "I serve as the Administrative Lead for Pentecost, overseeing the administration, communication and follow-up that keep the ministry organised and moving forward. I work closely with teams to ensure information is managed effectively and responsibilities are followed through with excellence. My heart is to build strong administrative foundations that support the work of the Holy Spirit and allows the vision of Pentecost to be executed with excellence.",
+  },
+];
+
+// Backwards-compatible export for any components relying on LEADERS list
+export const LEADERS = [
+  {
+    id: FOUNDERS.id,
+    name: FOUNDERS.names,
+    role: FOUNDERS.role,
+    badge: FOUNDERS.badge,
+    image: FOUNDERS.image,
+    responsibility: FOUNDERS.motto,
+    bio: FOUNDERS.bio,
+  },
+  ...DEPARTMENT_LEADS,
 ];
 
 export function LeadershipSection({
@@ -85,7 +127,7 @@ export function LeadershipSection({
         <ScrollReveal direction="up" distance={20}>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-border/60">
             <div>
-              <p className="eyebrow section-label">Credibility &amp; Stewards</p>
+              <p className="eyebrow section-label">Leadership &amp; Stewards</p>
               <h2 className="tracking-[-0.04em] text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground">
                 Meet the Leadership Team
               </h2>
@@ -97,81 +139,150 @@ export function LeadershipSection({
           </div>
         </ScrollReveal>
 
-        {/* Temporary Notice: Profiles being updated for launch */}
-        <div className="mt-6 rounded-sm border border-primary/25 bg-accent/40 p-4 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="inline-flex size-7 items-center justify-center rounded-sm bg-primary/10 text-primary shrink-0">
-              <SparkleIcon size={15} weight="duotone" />
-            </span>
-            <p className="text-xs text-foreground/90">
-              <strong>Leadership Profiles Staged:</strong> Full steward names, biographies, and confirmed portraits are currently being updated in alignment with our ministerial covering before our official launch.
-            </p>
+        {/* 1. Featured Founders Card: Daniel & Priscilla Olanrewaju */}
+        <ScrollReveal direction="up" distance={24} className="mt-8">
+          <div className="overflow-hidden rounded-sm border-2 border-primary/20 bg-background shadow-sm hover:border-primary/40 transition-colors">
+            <div className="grid grid-cols-1 md:grid-cols-12 items-stretch">
+              {/* Portrait Photo */}
+              <div className="relative md:col-span-5 min-h-[300px] md:min-h-[380px] bg-night overflow-hidden">
+                <img
+                  src={FOUNDERS.image}
+                  alt={FOUNDERS.names}
+                  loading="lazy"
+                  decoding="async"
+                  className="size-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-night/80 via-night/20 to-transparent md:hidden" />
+                <div className="absolute top-4 left-4">
+                  <span className="hero-glass-card px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-ember">
+                    {FOUNDERS.badge}
+                  </span>
+                </div>
+              </div>
+
+              {/* Founders Content & Mission */}
+              <div className="p-6 sm:p-8 md:p-10 md:col-span-7 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary mb-2">
+                    <SparkleIcon size={16} weight="duotone" />
+                    <span>Foundational Burden</span>
+                  </div>
+
+                  <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
+                    {FOUNDERS.names}
+                  </h3>
+                  <p className="text-sm sm:text-base font-semibold text-primary mt-1">
+                    {FOUNDERS.role}
+                  </p>
+
+                  {/* Motto Quote Ribbon */}
+                  <div className="mt-4 rounded-sm border-l-4 border-primary bg-primary/5 p-4">
+                    <p className="font-display text-base sm:text-lg font-bold text-foreground">
+                      &ldquo;{FOUNDERS.motto}&rdquo;
+                    </p>
+                  </div>
+
+                  {/* Bio */}
+                  <p className="mt-4 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    {FOUNDERS.bio}
+                  </p>
+                </div>
+
+                {/* Tags */}
+                <div className="mt-6 pt-5 border-t border-border flex flex-wrap gap-2">
+                  {FOUNDERS.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-flex items-center gap-1.5 rounded-sm bg-secondary px-2.5 py-1 text-[11px] font-medium text-foreground/80 border border-border"
+                    >
+                      <FlameIcon size={12} weight="fill" className="text-primary" />
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
+        </ScrollReveal>
+
+        {/* 2. Departmental Leads Subheader */}
+        <div className="mt-12 mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <span className="text-[11px] font-bold uppercase tracking-widest text-primary block">
+              Execution &amp; Operations
+            </span>
+            <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-foreground">
+              Departmental &amp; Strategy Leads
+            </h3>
+          </div>
+          <p className="text-xs text-muted-foreground max-w-sm">
+            Overseeing strategy, publicity, creative direction, technology, and administration.
+          </p>
         </div>
 
-        {/* Leaders Grid (items-start prevents other cards from stretching when one bio expands) */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
-          {LEADERS.map((leader, idx) => {
-            const isExpanded = expandedLeaderId === leader.id;
+        {/* 3. Five Departmental Leads Grid (items-start ensures expanding one bio does not affect others) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 items-start">
+          {DEPARTMENT_LEADS.map((lead, idx) => {
+            const isExpanded = expandedLeaderId === lead.id;
 
             return (
               <ScrollReveal
-                key={leader.id}
+                key={lead.id}
                 direction="up"
-                distance={24}
-                delay={idx * 80}
+                distance={20}
+                delay={idx * 60}
               >
                 <div className="group flex flex-col justify-start rounded-sm border border-border bg-background overflow-hidden transition-all duration-300 hover:border-primary/60 hover:-translate-y-1 hover:shadow-md">
                   {/* Photo with Overlay */}
-                  <div className="relative aspect-[4/4.5] w-full overflow-hidden bg-night">
+                  <div className="relative aspect-[4/4.8] w-full overflow-hidden bg-night">
                     <img
-                      src={leader.image}
-                      alt={leader.name}
+                      src={lead.image}
+                      alt={lead.name}
                       loading="lazy"
                       decoding="async"
-                      className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105 opacity-90"
+                      className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105 opacity-95"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-night via-night/35 to-transparent" />
 
                     {/* Floating role badge */}
                     <div className="absolute top-3 left-3">
-                      <span className="hero-glass-card px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-ember">
-                        {leader.badge}
+                      <span className="hero-glass-card px-2.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-ember">
+                        {lead.badge}
                       </span>
                     </div>
 
                     {/* Name & Role overlay */}
                     <div className="absolute bottom-3 left-3 right-3 text-on-dark">
-                      <h3 className="font-display text-lg sm:text-xl font-bold leading-tight text-on-dark">
-                        {leader.name}
-                      </h3>
-                      <p className="text-xs font-semibold text-ember mt-0.5">
-                        {leader.role}
+                      <h4 className="font-display text-base sm:text-lg font-bold leading-tight text-on-dark">
+                        {lead.name}
+                      </h4>
+                      <p className="text-[11px] font-semibold text-ember mt-0.5 leading-snug">
+                        {lead.role}
                       </p>
                     </div>
                   </div>
 
                   {/* Details Card (Compact with Consistent Baseline) */}
-                  <div className="p-5 flex flex-col justify-start">
+                  <div className="p-4 flex flex-col justify-start">
                     <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary">
+                      <span className="text-[9.5px] font-bold uppercase tracking-wider text-primary">
                         Areas of Responsibility
                       </span>
-                      <p className="text-xs font-medium text-foreground/80 mt-1 pb-3 border-b border-border/80 min-h-[42px] leading-relaxed">
-                        {leader.responsibility}
+                      <p className="text-[11.5px] font-medium text-foreground/85 mt-1 pb-3 border-b border-border/80 min-h-[46px] leading-relaxed">
+                        {lead.responsibility}
                       </p>
 
                       {/* Collapsible Bio Drawer (Expands ONLY this card downward) */}
-                      <div className="mt-3">
+                      <div className="mt-2.5">
                         <button
                           type="button"
-                          onClick={() => toggleLeaderBio(leader.id)}
-                          className="w-full flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-primary hover:underline cursor-pointer py-1"
+                          onClick={() => toggleLeaderBio(lead.id)}
+                          className="w-full flex items-center justify-between text-[10.5px] font-bold uppercase tracking-wider text-primary hover:underline cursor-pointer py-1"
                           aria-expanded={isExpanded}
                         >
                           <span>{isExpanded ? "Hide Bio" : "Read Full Bio"}</span>
                           <CaretDownIcon
-                            size={14}
+                            size={13}
                             weight="bold"
                             className={`transition-transform duration-200 ${
                               isExpanded ? "rotate-180" : "rotate-0"
@@ -188,7 +299,7 @@ export function LeadershipSection({
                         >
                           <div className="overflow-hidden">
                             <p className="text-xs leading-relaxed text-muted-foreground pt-1 pb-1">
-                              {leader.bio}
+                              {lead.bio}
                             </p>
                           </div>
                         </div>
@@ -201,7 +312,7 @@ export function LeadershipSection({
           })}
         </div>
 
-        {/* Ministerial Accountability & Covering Callout */}
+        {/* 4. Ministerial Accountability & Covering Callout */}
         <div className="mt-12 rounded-sm border border-border bg-background p-6 sm:p-10 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">

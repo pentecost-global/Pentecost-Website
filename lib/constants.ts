@@ -12,6 +12,7 @@ export const HERO_IMAGE = "/assets/hero-person.jpg";
 export const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Holy Spirit - Our Host", href: "/holy-spirit" },
   { label: "Gatherings", href: "/gatherings" },
   { label: "Partners", href: "/partners" },
   { label: "Young Believers Forum", href: "/forum" },
@@ -19,6 +20,7 @@ export const NAV_ITEMS = [
 ] as const;
 
 export const FOOTER_MOVEMENT_LINKS = [
+  { label: "Holy Spirit - Our Host", href: "/holy-spirit" },
   { label: "Our mandate", href: "/about" },
   { label: "Gatherings", href: "/gatherings" },
   { label: "Young Believers Forum", href: "/forum" },

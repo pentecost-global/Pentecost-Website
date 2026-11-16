@@ -56,6 +56,7 @@ export function Header() {
   }, [mobileMenuOpen]);
 
   const serviceSubLinks = [
+    { label: "Holy Spirit - Our Host", href: "/holy-spirit" },
     { label: "Serve the Movement", href: "/get-involved" },
     { label: "Partner Churches & Ministries", href: "/partners" },
     { label: "Young Believers Forum", href: "/forum" },
@@ -102,7 +103,7 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     data-status={isActive ? "active" : undefined}
-                    className={`relative rounded-sm px-3.5 py-2 text-xs font-semibold tracking-[-0.01em] transition-colors duration-200 ${
+                    className={`relative rounded-sm px-2.5 xl:px-3.5 py-1.5 xl:py-2 text-xs font-semibold tracking-[-0.01em] transition-colors duration-200 ${
                       isActive
                         ? "bg-background text-primary shadow-2xs"
                         : "text-foreground/80 hover:text-primary hover:bg-background/60"
