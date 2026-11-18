@@ -98,7 +98,7 @@ export function Footer() {
                   <TiktokLogoIcon
                     size={15}
                     weight="bold"
-                    className="text-night transition-transform duration-200 group-hover:scale-110"
+                    className="text-[#00F2FE] transition-transform duration-200 group-hover:scale-110"
                   />
                   <span>@pentecostglobal</span>
                 </a>

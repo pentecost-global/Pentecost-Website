@@ -21,7 +21,7 @@ export interface FounderProfile {
   image: string;
   badge: string;
   bio: string;
-  tags: string[];
+  tags?: string[];
 }
 
 export interface DepartmentalLead {
@@ -37,12 +37,12 @@ export interface DepartmentalLead {
 export const FOUNDERS: FounderProfile = {
   id: "daniel-priscilla-olanrewaju",
   names: "Daniel & Priscilla Olanrewaju",
-  role: "Vision Bearers & Founders of Pentecost",
+  role: "Vision Stewards",
   motto: "One Spirit. One Body. One Generation Set Ablaze.",
-  badge: "Vision Bearers & Founders",
+  badge: "Vision Stewards",
   image: "/assets/daniel-priscilla-olanrewaju.png",
   bio: "Daniel and Priscilla Olanrewaju are the vision bearers of Pentecost, united by a God-given burden to see a generation awakened, empowered and set ablaze by the Holy Spirit. Through Pentecost, they are passionate about bringing believers together across churches and cities to encounter God, rediscover their true identity in Christ and fulfil their divine purpose.",
-  tags: ["Spiritual Burden", "Generation Awakened", "Cross-Church Unity"],
+  tags: [],
 };
 
 export const DEPARTMENT_LEADS: DepartmentalLead[] = [
@@ -161,13 +161,8 @@ export function LeadershipSection({
               </div>
 
               {/* Founders Content & Mission */}
-              <div className="p-6 sm:p-8 md:p-10 md:col-span-7 flex flex-col justify-between">
+              <div className="p-6 sm:p-8 md:p-10 md:col-span-7 flex flex-col justify-center">
                 <div>
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary mb-2">
-                    <SparkleIcon size={16} weight="duotone" />
-                    <span>Foundational Burden</span>
-                  </div>
-
                   <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
                     {FOUNDERS.names}
                   </h3>
@@ -186,19 +181,6 @@ export function LeadershipSection({
                   <p className="mt-4 text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {FOUNDERS.bio}
                   </p>
-                </div>
-
-                {/* Tags */}
-                <div className="mt-6 pt-5 border-t border-border flex flex-wrap gap-2">
-                  {FOUNDERS.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center gap-1.5 rounded-sm bg-secondary px-2.5 py-1 text-[11px] font-medium text-foreground/80 border border-border"
-                    >
-                      <FlameIcon size={12} weight="fill" className="text-primary" />
-                      {tag}
-                    </span>
-                  ))}
                 </div>
               </div>
             </div>

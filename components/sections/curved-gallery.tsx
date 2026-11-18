@@ -1,7 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowUpRightIcon,
+  BookOpenTextIcon,
+  HandsPrayingIcon,
+  UsersThreeIcon,
+} from "@phosphor-icons/react/dist/ssr";
 import { ButtonLink } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
@@ -47,14 +52,23 @@ const BOTTOM_HIGHLIGHTS = [
   {
     title: "Worship & Prayer Moments",
     copy: "Across churches and ministries, believers gathering with one heart and one hunger for a fresh outpouring of the Holy Spirit.",
+    tag: "Worship & Prayer",
+    image: "/assets/pentecost-portrait-2.jpg",
+    icon: HandsPrayingIcon,
   },
   {
     title: "The Ministry of the Word",
     copy: "Sound biblical teaching and prayer charges that strengthen, align, and commission a generation for God's purposes.",
+    tag: "Ministry of the Word",
+    image: "/assets/pentecost-portrait-8.jpg",
+    icon: BookOpenTextIcon,
   },
   {
     title: "Cross-Church Fellowship",
     copy: "Walking together beyond denominational walls and connecting people to thriving local Christian communities.",
+    tag: "Cross-Church Fellowship",
+    image: "/assets/pentecost-landscape-9.jpg",
+    icon: UsersThreeIcon,
   },
 ] as const;
 
@@ -333,25 +347,55 @@ export function CurvedGallerySection({
         </div>
       </div>
 
-      {/* Bottom 3-Column Feature Row with Vertical Dividers */}
+      {/* Bottom 3-Column Feature Cards with Visual Imagery */}
       <div className="site-width mt-14 sm:mt-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border border-t border-border pt-10">
-          {BOTTOM_HIGHLIGHTS.map((item, idx) => (
-            <ScrollReveal
-              key={item.title}
-              direction="up"
-              distance={18}
-              delay={idx * 90}
-              className="px-4 sm:px-8 py-4 md:py-0 text-center"
-            >
-              <h3 className="font-display text-lg sm:text-xl font-bold tracking-[-0.02em] text-foreground">
-                {item.title}
-              </h3>
-              <p className="mt-2.5 text-xs sm:text-[13px] leading-relaxed text-muted-foreground max-w-xs mx-auto">
-                {item.copy}
-              </p>
-            </ScrollReveal>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 border-t border-border">
+          {BOTTOM_HIGHLIGHTS.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <ScrollReveal
+                key={item.title}
+                direction="up"
+                distance={20}
+                delay={idx * 90}
+                className="group relative rounded-sm border border-border bg-background overflow-hidden flex flex-col justify-start transition-all duration-300 hover:border-primary/60 hover:-translate-y-1 hover:shadow-md"
+              >
+                {/* Visual Image Header */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-night">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="size-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-night/95 via-night/30 to-transparent" />
+
+                  {/* Category Tag Badge */}
+                  <div className="absolute top-3 left-3">
+                    <span className="hero-glass-card px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-ember inline-flex items-center gap-1.5">
+                      <Icon size={12} weight="fill" />
+                      {item.tag}
+                    </span>
+                  </div>
+
+                  {/* Title Overlaid for strong editorial composition */}
+                  <div className="absolute bottom-3 left-3 right-3 text-on-dark">
+                    <h3 className="font-display text-lg sm:text-xl font-bold tracking-tight text-on-dark leading-tight">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Body Content */}
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <p className="text-xs sm:text-[13px] leading-relaxed text-muted-foreground">
+                    {item.copy}
+                  </p>
+                </div>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>
