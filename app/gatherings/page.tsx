@@ -16,6 +16,30 @@ export const metadata: Metadata = {
   title: "Gatherings",
   description:
     "Spirit-led city-to-city gatherings in worship, the Word and prayer. Upcoming Pentecost gatherings will be announced here.",
+  alternates: {
+    canonical: "/gatherings",
+  },
+  openGraph: {
+    title: "Gatherings | Pentecost",
+    description:
+      "Spirit-led city-to-city gatherings in worship, the Word and prayer. Explore previous Pentecost gatherings across Coventry, Aberdeen, Plymouth and Glasgow.",
+    url: "/gatherings",
+    images: [
+      {
+        url: "/assets/gallery-5.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Believers gathered in worship and prayer during a Pentecost gathering",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gatherings | Pentecost",
+    description:
+      "Spirit-led city-to-city gatherings in worship, the Word and prayer. Explore previous Pentecost gatherings across Coventry, Aberdeen, Plymouth and Glasgow.",
+    images: ["/assets/gallery-5.jpg"],
+  },
 };
 
 export default function GatheringsPage() {

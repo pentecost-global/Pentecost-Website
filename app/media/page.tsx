@@ -15,6 +15,30 @@ export const metadata: Metadata = {
   title: "Media & Testimonies",
   description:
     "Approved Pentecost gathering highlights, teaching and testimonies will be shared here when available.",
+  alternates: {
+    canonical: "/media",
+  },
+  openGraph: {
+    title: "Media & Testimonies | Pentecost",
+    description:
+      "Approved Pentecost gathering highlights, teaching and testimonies from gatherings across cities.",
+    url: "/media",
+    images: [
+      {
+        url: "/assets/gallery-1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Pentecost gathering media highlights and testimonies",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Media & Testimonies | Pentecost",
+    description:
+      "Approved Pentecost gathering highlights, teaching and testimonies from gatherings across cities.",
+    images: ["/assets/gallery-1.jpg"],
+  },
 };
 
 export default function MediaPage() {

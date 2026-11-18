@@ -15,6 +15,30 @@ export const metadata: Metadata = {
   title: "Young Believers Forum",
   description:
     "An emerging year-round network for young believers, centred on biblical discipleship, prayer, community, accountability and collaboration.",
+  alternates: {
+    canonical: "/forum",
+  },
+  openGraph: {
+    title: "Young Believers Forum | Pentecost",
+    description:
+      "An emerging year-round network for young believers, centred on biblical discipleship, prayer, community, accountability and collaboration.",
+    url: "/forum",
+    images: [
+      {
+        url: "/assets/pentecost-portrait-5.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Young Believers Forum — Discipleship, Prayer & Community",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Young Believers Forum | Pentecost",
+    description:
+      "An emerging year-round network for young believers, centred on biblical discipleship, prayer, community, accountability and collaboration.",
+    images: ["/assets/pentecost-portrait-5.jpg"],
+  },
 };
 
 export default function ForumPage() {

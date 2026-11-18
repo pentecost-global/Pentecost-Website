@@ -23,6 +23,30 @@ export const metadata: Metadata = {
   title: "The Mandate & Leadership",
   description:
     "Discover the vision, leadership and stewards of Pentecost: spiritual renewal, unity across ministries and a generation strengthened in Christ.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "The Mandate & Leadership | Pentecost",
+    description:
+      "Discover the vision, leadership and stewards of Pentecost: spiritual renewal, unity across ministries and a generation strengthened in Christ.",
+    url: "/about",
+    images: [
+      {
+        url: "/assets/daniel-priscilla-olanrewaju.png",
+        width: 1200,
+        height: 630,
+        alt: "Daniel & Priscilla Olanrewaju — Vision Stewards of Pentecost",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Mandate & Leadership | Pentecost",
+    description:
+      "Discover the vision, leadership and stewards of Pentecost: spiritual renewal, unity across ministries and a generation strengthened in Christ.",
+    images: ["/assets/daniel-priscilla-olanrewaju.png"],
+  },
 };
 
 export default function AboutPage() {

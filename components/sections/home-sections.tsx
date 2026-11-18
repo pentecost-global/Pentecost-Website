@@ -32,7 +32,7 @@ export function HomeHeroSection() {
         <img
           className="hero-image"
           src={HERO_IMAGE}
-          alt=""
+          alt="Young believers worshiping and praying together during a Pentecost city gathering"
           width={1920}
           height={1088}
           loading="eager"

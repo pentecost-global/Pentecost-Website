@@ -1175,17 +1175,38 @@ textarea:focus-visible {
 }
 
 .skip-link {
-  z-index: 100;
+  z-index: 9999;
   background: var(--primary);
   color: var(--primary-foreground);
-  padding: 15px;
+  padding: 12px 18px;
   position: fixed;
-  top: -100px;
+  top: -120px;
   left: 20px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  transition: top 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.skip-link:focus {
-  top: 10px;
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 16px;
+  outline: 3px solid var(--ember);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .reveal {

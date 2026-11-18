@@ -25,9 +25,10 @@ export function EnquiryForm({ partnership = false }: EnquiryFormProps) {
         aria-describedby="enquiry-status"
       >
         {partnership && (
-          <label className="form-field full">
+          <label htmlFor="enquiry-organisation" className="form-field full">
             Organisational name
             <input
+              id="enquiry-organisation"
               name="organisation"
               placeholder="Church, ministry or fellowship"
               maxLength={150}
@@ -35,9 +36,10 @@ export function EnquiryForm({ partnership = false }: EnquiryFormProps) {
           </label>
         )}
 
-        <label className="form-field">
+        <label htmlFor="enquiry-name" className="form-field">
           {partnership ? "Contact person's name" : "Your name"}
           <input
+            id="enquiry-name"
             name="name"
             autoComplete="name"
             placeholder="Full name"
@@ -45,9 +47,10 @@ export function EnquiryForm({ partnership = false }: EnquiryFormProps) {
           />
         </label>
 
-        <label className="form-field">
+        <label htmlFor="enquiry-email" className="form-field">
           Email address
           <input
+            id="enquiry-email"
             name="email"
             type="email"
             autoComplete="email"
@@ -56,18 +59,19 @@ export function EnquiryForm({ partnership = false }: EnquiryFormProps) {
           />
         </label>
 
-        <label className="form-field">
+        <label htmlFor="enquiry-city" className="form-field">
           City
           <input
+            id="enquiry-city"
             name="city"
             placeholder="Your town or city"
             maxLength={100}
           />
         </label>
 
-        <label className="form-field">
+        <label htmlFor="enquiry-interest" className="form-field">
           {partnership ? "Partnership avenue" : "Enquiry interest"}
-          <select name="interest" defaultValue="">
+          <select id="enquiry-interest" name="interest" defaultValue="">
             <option value="" disabled>
               {partnership ? "Select how you'd like to partner" : "Select an interest"}
             </option>
@@ -93,9 +97,10 @@ export function EnquiryForm({ partnership = false }: EnquiryFormProps) {
           </select>
         </label>
 
-        <label className="form-field full">
+        <label htmlFor="enquiry-message" className="form-field full">
           Message
           <textarea
+            id="enquiry-message"
             name="message"
             placeholder="Your message"
             maxLength={2000}

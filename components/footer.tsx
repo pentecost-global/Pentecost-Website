@@ -42,7 +42,7 @@ export function Footer() {
 
             {/* Col 2: Explore / The Movement */}
             <div className="lg:col-span-2">
-              <h2 className="text-[13px] font-semibold tracking-[-0.01em] text-foreground mb-4">
+              <h2 className="text-[13px] font-semibold tracking-[-0.01em] text-foreground mb-4 pb-1 border-b border-primary/40 inline-block">
                 The movement
               </h2>
               <ul className="space-y-2.5 text-[13px] text-muted-foreground">
@@ -50,7 +50,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="inline-flex items-center gap-1.5 transition-all duration-200 hover:text-primary hover:translate-x-1"
+                      className="inline-flex items-center gap-1.5 underline underline-offset-4 decoration-border/70 transition-all duration-200 hover:text-primary hover:decoration-primary hover:translate-x-0.5"
                     >
                       {link.label}
                     </Link>
@@ -60,7 +60,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="inline-flex items-center gap-1.5 transition-all duration-200 hover:text-primary hover:translate-x-1"
+                      className="inline-flex items-center gap-1.5 underline underline-offset-4 decoration-border/70 transition-all duration-200 hover:text-primary hover:decoration-primary hover:translate-x-0.5"
                     >
                       {link.label}
                     </Link>

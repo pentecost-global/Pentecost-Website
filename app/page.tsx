@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { CtaBand } from "@/components/cta-band";
 import { CommunityCollageSection } from "@/components/sections/community-collage";
 import { CurvedGallerySection } from "@/components/sections/curved-gallery";
@@ -17,6 +18,36 @@ import {
   VisionMandateSection,
   YoungBelieversForumSection,
 } from "@/components/sections/home-sections";
+
+export const metadata: Metadata = {
+  title: "Pentecost — Outpouring of the Holy Spirit | Non-Denominational Christian Movement",
+  description:
+    "Across churches, ministries and cities, we gather in worship, prayer and the Word — for a fresh outpouring of the Holy Spirit and a generation awakened in Christ.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Pentecost — Outpouring of the Holy Spirit",
+    description:
+      "A non-denominational Christian movement gathering young believers across churches and ministries in worship, prayer and the Word.",
+    url: "/",
+    images: [
+      {
+        url: "/assets/hero-person.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Young believers worshiping and praying together during a Pentecost city gathering",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pentecost — Outpouring of the Holy Spirit",
+    description:
+      "A non-denominational Christian movement gathering young believers across churches and ministries in worship, prayer and the Word.",
+    images: ["/assets/hero-person.jpg"],
+  },
+};
 
 export default function HomePage() {
   return (

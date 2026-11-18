@@ -19,6 +19,30 @@ export const metadata: Metadata = {
   title: "Get Involved & Call for Volunteers",
   description:
     "Answer the call for volunteers: Media & Tech, Worship, Welfare, Intercession, Ushering and join the Global Pentecost Workforce Candlesticks platform.",
+  alternates: {
+    canonical: "/get-involved",
+  },
+  openGraph: {
+    title: "Get Involved & Call for Volunteers | Pentecost",
+    description:
+      "Answer the call for volunteers: Media & Tech, Worship, Welfare, Intercession, Ushering and join the Global Pentecost Workforce Candlesticks platform.",
+    url: "/get-involved",
+    images: [
+      {
+        url: "/assets/volunteers-flyer.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Call for Volunteers — Pentecost Movement",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Get Involved & Call for Volunteers | Pentecost",
+    description:
+      "Answer the call for volunteers across 10 functional teams and the global workforce.",
+    images: ["/assets/volunteers-flyer.jpg"],
+  },
 };
 
 export default function GetInvolvedPage() {

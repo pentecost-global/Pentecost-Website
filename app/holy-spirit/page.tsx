@@ -17,6 +17,30 @@ export const metadata: Metadata = {
   title: "Our Host: The Holy Spirit",
   description:
     "Before the first song is sung, there is One whose presence matters above all else. The Spirit of the Living God. The Fire of Pentecost.",
+  alternates: {
+    canonical: "/holy-spirit",
+  },
+  openGraph: {
+    title: "Our Host: The Holy Spirit | Pentecost",
+    description:
+      "Before the first song is sung, before the first prayer is lifted, there is One whose presence matters above all else. He is our Host. His presence is our priority. His glory is our pursuit.",
+    url: "/holy-spirit",
+    images: [
+      {
+        url: "/assets/spirit-light.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Holy Spirit — Host of Pentecost",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Host: The Holy Spirit | Pentecost",
+    description:
+      "Before the first song is sung, there is One whose presence matters above all else. The Spirit of the Living God. The Fire of Pentecost.",
+    images: ["/assets/spirit-light.jpg"],
+  },
 };
 
 export default function HolySpiritPage() {
@@ -29,6 +53,7 @@ export default function HolySpiritPage() {
           <img
             src="/assets/spirit-light.jpg"
             alt=""
+            role="presentation"
             loading="eager"
             decoding="async"
             fetchPriority="high"

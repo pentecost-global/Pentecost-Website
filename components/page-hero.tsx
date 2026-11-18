@@ -163,7 +163,7 @@ export function PageHero({
           <img
             className="hero-image opacity-45"
             src="/assets/gallery-5.jpg"
-            alt=""
+            alt="Believers gathered in worship and prayer during a Pentecost city gathering"
             width={1920}
             height={1088}
             loading="eager"
@@ -264,6 +264,7 @@ export function PageHero({
           <img
             src="/assets/pentecost-glasgow-minister.jpg"
             alt=""
+            role="presentation"
             loading="eager"
             decoding="async"
             fetchPriority="high"

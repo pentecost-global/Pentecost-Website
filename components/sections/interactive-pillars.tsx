@@ -133,8 +133,18 @@ export function InteractivePillars() {
           return (
             <article
               key={pillar.title}
+              role="button"
+              tabIndex={0}
+              aria-pressed={isActive}
+              aria-label={`${pillar.title} pillar: ${pillar.copy}`}
               onClick={() => setActiveIndex(idx)}
-              className={`pillar group cursor-pointer transition-all duration-300 ${
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setActiveIndex(idx);
+                }
+              }}
+              className={`pillar group cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2 ${
                 isActive
                   ? "ring-2 ring-ember -translate-y-1"
                   : "opacity-95 hover:opacity-100 hover:-translate-y-1"
@@ -142,7 +152,7 @@ export function InteractivePillars() {
             >
               <img
                 src={pillar.image}
-                alt=""
+                alt={`${pillar.title}: ${pillar.copy}`}
                 width={1920}
                 height={1088}
                 loading="lazy"

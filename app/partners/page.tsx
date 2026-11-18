@@ -11,6 +11,30 @@ export const metadata: Metadata = {
   title: "Partner With Us",
   description:
     "Churches, ministries, student fellowships and Christian unions: practical partnership through Pray, Mobilise, Serve, Host, and Follow Up.",
+  alternates: {
+    canonical: "/partners",
+  },
+  openGraph: {
+    title: "Partner With Us | Pentecost",
+    description:
+      "Churches, ministries, student fellowships and Christian unions: practical partnership through Pray, Mobilise, Serve, Host, and Follow Up.",
+    url: "/partners",
+    images: [
+      {
+        url: "/assets/pentecost-glasgow-minister.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ministry partnership across churches and cities",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Partner With Us | Pentecost",
+    description:
+      "Churches, ministries, student fellowships and Christian unions: practical partnership through Pray, Mobilise, Serve, Host, and Follow Up.",
+    images: ["/assets/pentecost-glasgow-minister.jpg"],
+  },
 };
 
 export default function PartnersPage() {

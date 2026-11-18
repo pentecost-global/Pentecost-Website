@@ -15,6 +15,30 @@ export const metadata: Metadata = {
   title: "Contact & Enquiries",
   description:
     "Enquiries about Pentecost, partnership, volunteering and the Young Believers Forum. Our enquiry service is opening soon.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact & Enquiries | Pentecost",
+    description:
+      "Enquiries about Pentecost, partnership, volunteering and the Young Believers Forum. Connect with our team.",
+    url: "/contact",
+    images: [
+      {
+        url: "/assets/about-hero-portrait.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Pentecost Movement",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact & Enquiries | Pentecost",
+    description:
+      "Enquiries about Pentecost, partnership, volunteering and the Young Believers Forum.",
+    images: ["/assets/about-hero-portrait.jpg"],
+  },
 };
 
 export default function ContactPage() {
