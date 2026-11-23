@@ -100,7 +100,7 @@ const organizationSchema = {
       foundingDate: "2025-06-20",
       sameAs: [
         "https://instagram.com/pentecostymc",
-        "https://tiktok.com/@pentecostglobal",
+        "https://tiktok.com/@pentecostymc",
         "https://youtube.com/@pentecostymc",
       ],
       founder: {

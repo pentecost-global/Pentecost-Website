@@ -75,7 +75,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <a
-                    href="https://tiktok.com/@pentecostglobal"
+                    href="https://tiktok.com/@pentecostymc"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="size-8 rounded-sm bg-accent text-primary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -107,16 +107,16 @@ export default function ContactPage() {
                 <p className="text-xs text-muted-foreground mb-3">Follow the movement live on TikTok &amp; Instagram:</p>
                 <div className="flex flex-col sm:flex-row gap-2.5">
                   <a
-                    href="https://tiktok.com/@pentecostglobal"
+                    href="https://tiktok.com/@pentecostymc"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-sm bg-night text-on-dark border border-border hover:border-[#FFE600] hover:bg-black transition-all cursor-pointer flex-1"
-                    title="Opens @pentecostglobal on TikTok in a new tab"
+                    title="Opens @pentecostymc on TikTok in a new tab"
                   >
                     <div className="flex items-center gap-2">
                       <TiktokLogoIcon size={16} weight="bold" className="text-[#00F2FE]" />
                       <span className="font-extrabold text-xs text-[#FFE600] tracking-tight">TikTok</span>
-                      <span className="font-semibold text-xs text-white group-hover:underline">@pentecostglobal</span>
+                      <span className="font-semibold text-xs text-white group-hover:underline">@pentecostymc</span>
                     </div>
                     <ArrowSquareOutIcon size={14} weight="bold" className="text-white/40 group-hover:text-[#FFE600] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>

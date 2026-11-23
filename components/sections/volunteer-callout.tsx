@@ -338,16 +338,16 @@ export function CallForVolunteersSection({
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2.5">
                   <a
-                    href="https://tiktok.com/@pentecostglobal"
+                    href="https://tiktok.com/@pentecostymc"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-sm bg-white/5 border border-white/10 hover:border-[#FFE600] hover:bg-white/10 transition-all duration-200 cursor-pointer flex-1"
-                    title="Opens @pentecostglobal on TikTok in a new tab"
+                    title="Opens @pentecostymc on TikTok in a new tab"
                   >
                     <div className="flex items-center gap-2">
                       <TiktokLogoIcon size={16} weight="bold" className="text-[#00F2FE] shrink-0" />
                       <span className="font-extrabold text-xs text-[#FFE600] tracking-tight">TikTok</span>
-                      <span className="font-semibold text-xs text-white group-hover:underline">@pentecostglobal</span>
+                      <span className="font-semibold text-xs text-white group-hover:underline">@pentecostymc</span>
                     </div>
                     <ArrowSquareOutIcon size={14} weight="bold" className="text-white/40 group-hover:text-[#FFE600] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
                   </a>

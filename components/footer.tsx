@@ -90,7 +90,7 @@ export function Footer() {
                 </a>
 
                 <a
-                  href="https://tiktok.com/@pentecostglobal"
+                  href="https://tiktok.com/@pentecostymc"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-badge group"
@@ -100,7 +100,7 @@ export function Footer() {
                     weight="bold"
                     className="text-[#00F2FE] transition-transform duration-200 group-hover:scale-110"
                   />
-                  <span>@pentecostglobal</span>
+                  <span>@pentecostymc</span>
                 </a>
 
                 <a
